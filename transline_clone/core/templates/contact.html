@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="contact-section">
+ 
+    <div class="container">
+                <!-- 🔥 CENTER HEADING -->
+        <div class="text-center mb-5">
+            <h1 class="contact-heading">Contact</h1>
+        </div>
+
+
+        <div class="row align-items-center">
+
+            <!-- LEFT INFO -->
+<!-- LEFT INFO -->
+<div class="col-md-5 contact-info">
+
+    <h2>{{ contact_info.title }}</h2>
+    <p>{{ contact_info.description }}</p>
+
+    <div class="contact-details">
+        <p>📍 {{ contact_info.address }}</p>
+        <p>📞 {{ contact_info.phone }}</p>
+        <p>📧 {{ contact_info.email }}</p>
+    </div>
+
+    <!-- MAP -->
+    {% if contact_info.map_embed %}
+    <div class="contact-map">
+        {{ contact_info.map_embed|safe }}
+    </div>
+    {% endif %}
+
+</div>
+
+            <!-- RIGHT FORM -->
+            <div class="col-md-7">
+
+                <div class="contact-form-box">
+
+                    <h3>Send Message</h3>
+
+                    <form id="contactForm">
+                        {% csrf_token %}
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" name="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+                        <button type="submit">Send Message 🚀</button>
+                    </form>
+
+                    <p id="successMsg"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

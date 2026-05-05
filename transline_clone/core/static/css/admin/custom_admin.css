@@ -1,0 +1,26 @@
+/* Tree row styling */
+.djn-item {
+    border-radius: 6px;
+    margin: 4px 0;
+}
+
+/* Hover effect */
+.djn-item:hover {
+    background: #f8f9fa;
+}
+
+/* Title bold */
+.field-indented_title {
+    font-weight: 500;
+    color: #0d6efd;
+}
+
+/* Drag handle spacing */
+.drag-handle {
+    margin-right: 10px;
+}
+
+/* Improve spacing */
+#result_list tbody tr td {
+    padding: 10px;
+}

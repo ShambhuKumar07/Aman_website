@@ -1,0 +1,213 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | G.A Enterprises & Services{% endblock %}
+
+{% block content %}
+
+<!-- 🔥 HERO SECTION -->
+<div class="hero-section">
+
+    <div class="hero-arrow left" onclick="prevSlide()">❮</div>
+    <div class="hero-arrow right" onclick="nextSlide()">❯</div>
+
+    {% for b in banners %}
+    <div class="hero-slide">
+        <img src="{{ b.image.url }}" class="hero-img">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h5 class="small-text">Website Name</h5>
+            <h1>{{ b.title }}</h1>
+            <p>{{ b.subtitle }}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="hero-cards container">
+        <div class="row">
+            {% for s in services|slice:":4" %}
+            <div class="col-md-3">
+                <div class="service-card">
+                    <img src="{{ s.icon.url }}">
+                    <h5>{{ s.title }}</h5>
+                    <a href="#">Read More →</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+<!-- ========================= -->
+<!-- 🔥 ABOUT SECTION -->
+<!-- ========================= -->
+
+<div class="container about-section mt-5 p-5">
+
+    <h2 class="text-center">About G.A Enterprises</h2>
+
+    <div class="row align-items-center">
+
+        <!-- LEFT IMAGE -->
+        <div class="col-md-6 animate-left">
+            <div id="aboutCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+                <div class="carousel-inner">
+                    {% for item in about_items %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <img src="{{ item.image.url }}" class="d-block w-100 about-img">
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- RIGHT TEXT -->
+        <div class="col-md-6 about-text animate-right">
+            {% if main_about %}
+                <p>{{ main_about.description }}</p>
+            {% endif %}
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SERVICES -->
+
+<div class="container-fluid services-section p-5">
+    <h2>Our Core Services</h2>
+    <p class="services-subtitle">We deliver a complete range of engineering, fabrication, manpower, and technical solutions tailored to modern industrial needs.</p>
+
+    <div class="services-row">
+        {% for s in services %}
+        <div class="service-card-premium">
+            
+            <div class="icon-box">
+                <img src="{{ s.icon.url }}" alt="">
+            </div>
+
+            <h4>{{ s.title }}</h4>
+            <p>{{ s.description }}</p>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<br>
+<!-- ========================= -->
+<!-- 🔥 WHY CHOOSE US -->
+<!-- ========================= -->
+<div class="why-section">
+    <div class="container text-center">
+
+        <h2 class="why-title">Why Choose Us</h2>
+        <p class="why-subtitle">
+            Delivering excellence with experience, skilled workforce, and proven results.
+        </p>
+
+        <div class="row mt-5">
+
+            <div class="col-md-4">
+                <div class="why-card">
+                    <div class="why-number">100+</div>
+                    <div class="why-text">Projects Completed</div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="why-card">
+                    <div class="why-number">50+</div>
+                    <div class="why-text">Skilled Workforce</div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="why-card">
+                    <div class="why-text">Industry Experience</div>
+                    <div class="why-number">5+ Years</div>
+                    
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container products-section mt-5 p-5">
+    <h2 class="text-center">Products</h2>
+
+    <div class="row">
+        {% for p in products %}
+        <div class="col-md-4 mb-4">
+
+            <div class="card product-card fade-up">
+
+                <!-- Image -->
+                <div class="product-img">
+                    <img src="{{ p.image.url }}" alt="">
+                    
+                    <!-- Overlay -->
+                    <div class="product-overlay">
+                        <a href="#" class="view-btn">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="card-body">
+                    <h5>{{ p.name }}</h5>
+                    <p>{{ p.description|truncatewords:15 }}</p>
+                </div>
+
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+ <!-- 🏭 Industries -->
+   
+<div class="container industries-section mt-5 mb-5">
+    <h2 class="text-center">Industries</h2>
+
+    <div class="row">
+        {% for i in industries %}
+        <div class="col-md-3 mb-4">
+
+            <div class="industry-card">
+
+                <div class="industry-img">
+                    <img src="{{ i.image.url }}" alt="">
+                </div>
+
+                <h5>{{ i.name }}</h5>
+
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- 🔥 HERO -->
+<section class="career-hero text-center">
+    <h1>{{ career.title }}</h1>
+    <h3>{{ career.subtitle }}</h3>
+    <p>{{ career.description }}</p>
+</section>
+
+<!-- 🚀 WHY JOIN -->
+<section class="why-join container">
+    <h2 class="text-center">Why Join Us</h2>
+
+    <div class="row">
+        {% for item in why_join %}
+        <div class="col-md-3">
+            <div class="why-card">
+                <h4>{{ item.title }}</h4>
+                <p>{{ item.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- 📍 LOCATIONS -->
+<section class="locations text-center">
+    <h2>Find Us Across India</h2>
+    <div class="row justify-content-center">
+        {% for loc in locations %}
+        <div class="col-md-3">
+            <div class="location-card">
+                <h5>{{ loc.city }}</h5>
+                <p>{{ loc.office_type }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- 📩 APPLICATION FORM -->
+<section class="apply-section">
+    <div class="container">
+
+        <h2 class="text-center">Submit Your Profile</h2>
+
+        <form method="post" enctype="multipart/form-data" class="career-form">
+            {% csrf_token %}
+
+            <input name="name" placeholder="Full Name" required>
+            <input name="phone" placeholder="Phone Number" required>
+            <input name="email" placeholder="Email Address" required>
+            <input name="position" placeholder="Post Applying For" required>
+
+            <input type="file" name="resume" required>
+
+            <textarea name="message" placeholder="Message"></textarea>
+
+            <button>Submit Now 🚀</button>
+
+        </form>
+
+    </div>
+</section>
+
+{% endblock %}

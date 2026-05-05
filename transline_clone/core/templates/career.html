@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- 🔥 HERO SECTION -->
+
+<section class="career-hero text-center">
+    <div class="container">
+        <h1>{{ career.title }}</h1>
+        <h3>{{ career.subtitle }}</h3>
+        <p>{{ career.description }}</p>
+    </div>
+</section>
+
+<!-- 🚀 WHY JOIN -->
+
+<section class="why-join container">
+    <h2 class="section-heading text-center">Why Join G.A Enterprises & Services
+?</h2>
+
+ 
+<div class="row align-items-center">
+    {% for item in why_join %}
+    <div class="col-md-6">
+        <div class="why-card d-flex">
+
+            <!-- NUMBER ICON -->
+            <div class="why-icon">
+                {{ forloop.counter }}
+            </div>
+
+            <!-- TEXT -->
+            <div>
+                <h4>{{ item.title }}</h4>
+                <p>{{ item.description }}</p>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+ 
+
+</section>
+
+<!-- 📍 LOCATIONS -->
+
+<section class="locations text-center">
+    <div class="container">
+        <h2 class="section-heading">Find Us Across India</h2>
+
+ 
+    <div class="row justify-content-center">
+        {% for loc in locations %}
+        <div class="col-md-3 col-sm-6">
+            <div class="location-card">
+                <h5>{{ loc.city }}</h5>
+                <p>{{ loc.office_type }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+ 
+
+</section>
+
+<!-- 📩 APPLICATION FORM -->
+
+<section class="apply-section">
+    <div class="container">
+
+ 
+    <h2 class="section-heading text-center">Submit Your Profile</h2>
+
+    <p class="text-center mb-4">
+        Can’t find a role that matches your expertise? Submit your profile and we’ll connect with you.
+    </p>
+
+    <form method="post" enctype="multipart/form-data" class="career-form">
+        {% csrf_token %}
+
+        <div class="row">
+            <div class="col-md-6">
+                <input name="name" placeholder="Full Name" required>
+            </div>
+
+            <div class="col-md-6">
+                <input name="phone" placeholder="Phone Number" required>
+            </div>
+
+            <div class="col-md-6">
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+
+            <div class="col-md-6">
+                <input name="position" placeholder="Post Applying For" required>
+            </div>
+        </div>
+
+        <!-- FILE UPLOAD -->
+        <input type="file" name="resume" required>
+
+        <!-- MESSAGE -->
+        <textarea name="message" rows="4" placeholder="Any Message (Optional)"></textarea>
+
+        <!-- BUTTON -->
+        <button type="submit">Submit Now 🚀</button>
+    </form>
+
+</div>
+ 
+
+</section>
+
+
+
+{% endblock %}
