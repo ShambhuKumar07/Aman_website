@@ -41,32 +41,19 @@ admin.site.register(Chairman)
 admin.site.register(TeamMember)
 admin.site.register(AboutLocation)
 
-
-from .models import NavProduct
-
 from django.contrib import admin
-from .models import NavProduct
-
 from django.contrib import admin
 from mptt.admin import DraggableMPTTAdmin
-from .models import NavProduct
-
-@admin.register(NavProduct)
-class NavProductAdmin(DraggableMPTTAdmin):
-    list_display = ('tree_actions', 'indented_title', 'slug', 'parent')
-    list_display_links = ('indented_title',)
-    search_fields = ('name', 'slug')
-    list_filter = ('parent',)
-    prepopulated_fields = {"slug": ("name",)}
-
-    mptt_level_indent = 20
-    class Media:
-        css = {
-            'all': ('admin/custom_admin.css',)
-        }
-
 
 
 from .models import Certification
 
 admin.site.register(Certification)
+
+from mptt.admin import DraggableMPTTAdmin
+from .models import ProductCategory
+
+
+@admin.register(ProductCategory)
+class ProductCategoryAdmin(DraggableMPTTAdmin):
+    prepopulated_fields = {'slug': ('name',)}

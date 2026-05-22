@@ -36,45 +36,8 @@ from django.utils.text import slugify
  
 
 from mptt.models import MPTTModel, TreeForeignKey
-
-class NavProduct(MPTTModel):   # ✅ MUST CHANGE
-    name = models.CharField(max_length=200)
-    slug = models.SlugField(blank=True)
-
-    parent = TreeForeignKey(
-        'self',
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-        related_name='children'
-    )
-
-    class MPTTMeta:
-        order_insertion_by = ['name']
-
-    def __str__(self):
-        return self.name
-
-
-# class Product(models.Model):
-#     name = models.CharField(max_length=200)
-#     description = models.TextField()
-#     image = models.ImageField(upload_to='products/')
-
-#     parent = models.ForeignKey(
-#         'self',
-#         on_delete=models.CASCADE,
-#         null=True,
-#         blank=True,
-#         related_name='children'
-#     )
-
-#     def __str__(self):
-#         return self.name
-
-
-
-
+ 
+ 
 class Industry(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='industries/')
@@ -258,3 +221,71 @@ class Certification(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+
+#######################
+# navbar Product
+#######################
+
+
+from mptt.models import MPTTModel, TreeForeignKey
+
+class ProductCategory(MPTTModel):
+
+    name = models.CharField(max_length=100)
+
+    slug = models.SlugField(
+        unique=True,
+        blank=True
+    )
+
+    icon = models.CharField(
+        max_length=20,
+        blank=True,
+        null=True
+    )
+
+    parent = TreeForeignKey(
+        'self',
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name='children'
+    )
+
+    # NEW FIELDS
+    overview = models.TextField(
+        blank=True,
+        null=True
+    )
+
+    specifications = models.TextField(
+        blank=True,
+        null=True
+    )
+
+    gallery_image1 = models.ImageField(
+        upload_to='category_gallery/',
+        blank=True,
+        null=True
+    )
+
+    gallery_image2 = models.ImageField(
+        upload_to='category_gallery/',
+        blank=True,
+        null=True
+    )
+
+    class MPTTMeta:
+        order_insertion_by = ['name']
+
+    def save(self, *args, **kwargs):
+
+        if not self.slug:
+            self.slug = slugify(self.name)
+
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name

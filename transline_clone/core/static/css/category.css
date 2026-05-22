@@ -1,0 +1,265 @@
+/* =========================================================
+   CATEGORY DETAIL PAGE - PREMIUM UI
+========================================================= */
+
+:root{
+    --primary:#0ea5e9;
+    --secondary:#2563eb;
+    --dark:#0f172a;
+    --text:#475569;
+    --light:#f8fafc;
+    --white:#ffffff;
+    --border:rgba(15,23,42,0.08);
+}
+
+/* =========================================================
+   PAGE SECTION
+========================================================= */
+
+.category-detail-page{
+    padding:110px 0 90px;
+
+    background:
+        linear-gradient(to bottom,
+        #f8fbff,
+        #ffffff);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.category-title{
+    font-size:4rem;
+    font-weight:900;
+
+    color:var(--dark);
+
+    margin-bottom:15px;
+
+    letter-spacing:-2px;
+
+    position:relative;
+
+    display:inline-block;
+}
+
+.category-title::after{
+    content:"";
+
+    width:95px;
+    height:4px;
+
+    background:
+        linear-gradient(90deg,
+        var(--primary),
+        var(--secondary));
+
+    position:absolute;
+
+    left:50%;
+    bottom:-16px;
+
+    transform:translateX(-50%);
+
+    border-radius:50px;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.category-card{
+    background:var(--white);
+
+    border:none;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    padding:10px;
+
+    box-shadow:
+        0 15px 50px rgba(15,23,42,0.06);
+
+    margin-bottom:40px;
+
+    transition:all .35s ease;
+
+    position:relative;
+}
+
+.category-card:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 22px 60px rgba(15,23,42,0.1);
+}
+
+/* =========================================================
+   CARD BODY
+========================================================= */
+
+.category-card .card-body{
+    padding:45px;
+}
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.category-card h2{
+    font-size:2rem;
+    font-weight:800;
+
+    color:var(--dark);
+
+    margin-bottom:25px;
+
+    position:relative;
+}
+
+.category-card h2::after{
+    content:"";
+
+    width:65px;
+    height:4px;
+
+    background:
+        linear-gradient(90deg,
+        var(--primary),
+        var(--secondary));
+
+    position:absolute;
+
+    left:0;
+    bottom:-10px;
+
+    border-radius:50px;
+}
+
+/* =========================================================
+   PARAGRAPH
+========================================================= */
+
+.category-card p{
+    font-size:1.05rem;
+
+    line-height:2;
+
+    color:var(--text);
+
+    margin-bottom:0;
+}
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery-img{
+    width:100%;
+
+    height:350px;
+
+    object-fit:cover;
+
+    border-radius:24px;
+
+    transition:all .45s ease;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.08);
+}
+
+.gallery-img:hover{
+    transform:scale(1.03);
+
+    box-shadow:
+        0 18px 50px rgba(0,0,0,0.14);
+}
+
+/* =========================================================
+   IMAGE WRAPPER
+========================================================= */
+
+.gallery-wrapper{
+    overflow:hidden;
+
+    border-radius:24px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:991px){
+
+    .category-title{
+        font-size:3rem;
+    }
+
+    .category-card .card-body{
+        padding:35px;
+    }
+
+    .gallery-img{
+        height:300px;
+    }
+}
+
+@media(max-width:768px){
+
+    .category-detail-page{
+        padding:90px 0 70px;
+    }
+
+    .category-title{
+        font-size:2.4rem;
+    }
+
+    .category-card h2{
+        font-size:1.7rem;
+    }
+
+    .category-card p{
+        font-size:1rem;
+        line-height:1.9;
+    }
+
+    .gallery-img{
+        height:250px;
+    }
+
+    .category-card .card-body{
+        padding:28px;
+    }
+}
+
+@media(max-width:576px){
+
+    .category-title{
+        font-size:2rem;
+    }
+
+    .category-card{
+        border-radius:22px;
+    }
+
+    .category-card .card-body{
+        padding:22px;
+    }
+
+    .category-card h2{
+        font-size:1.5rem;
+    }
+
+    .gallery-img{
+        height:220px;
+        border-radius:18px;
+    }
+}

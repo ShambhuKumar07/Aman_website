@@ -1,158 +1,494 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block title %}
+About | G.A Enterprises & Services
+{% endblock %}
+
 {% block content %}
 
-<!-- 🔥 HERO -->
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
 
-<section class="about-hero text-center">
+<section class="about-hero">
+
     <div class="container">
-        <h1>{{ about.title }}</h1>
-        <p>{{ about.description }}</p>
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                G.A Enterprises & Services
+            </span>
+
+            <h1>
+                Engineering Excellence &
+                Industrial Innovation
+            </h1>
+
+            <p>
+                Delivering world-class fabrication,
+                automation, CAD modeling,
+                industrial engineering, electrical solutions,
+                and technical manpower services across India.
+            </p>
+
+        </div>
+
     </div>
+
 </section>
 
-<!-- 👑 CHAIRMAN -->
-
-{% comment %} <section class="chairman-section container">
-    <h2 class="section-heading text-center">Chairman & Managing Director</h2>
-
-```
-<div class="row align-items-center">
-    <div class="col-md-4 text-center">
-        {% if chairman.image %}
-        <img src="{{ chairman.image.url }}" class="chairman-img">
-        {% endif %}
-    </div>
-
-    <div class="col-md-8">
-        <h3>{{ chairman.name }}</h3>
-        <h5>{{ chairman.designation }}</h5>
-        <p>{{ chairman.description }}</p>
-    </div>
-</div>
-```
-
-</section> {% endcomment %}
-
-<!-- 🏢 BOARD -->
-
-{% comment %} <section class="team-section">
-    <div class="container">
-        <h2 class="section-heading text-center">Board of Directors</h2>
-
-```
-    <div class="row">
-        {% for member in board %}
-        <div class="col-md-3">
-            <div class="team-card">
-                <img src="{{ member.image.url }}">
-                <h5>{{ member.name }}</h5>
-                <p>{{ member.designation }}</p>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</div>
-```
-
-</section> {% endcomment %}
-
-<!-- 👔 KEY PERSONNEL -->
+<!-- =========================================================
+     ABOUT COMPANY
+========================================================= -->
 
 <section class="team-section bg-light">
+
     <div class="container">
-        <h2 class="section-heading text-center">Key Managerial Personnel</h2>
 
-```
-    <div class="row">
-        {% for member in key %}
-        <div class="col-md-3">
-            <div class="team-card">
-                <img src="{{ member.image.url }}">
-                <h5>{{ member.name }}</h5>
-                <p>{{ member.designation }}</p>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</div>
-```
-
-</section>
-
-<!-- 🚀 LEADERS -->
-
-<section class="team-section">
-    <div class="container">
-        <h2 class="section-heading text-center">Leadership Team</h2>
-
-```
-    <div class="row">
-        {% for member in leaders %}
-        <div class="col-md-3">
-            <div class="team-card">
-                <img src="{{ member.image.url }}">
-                <h5>{{ member.name }}</h5>
-                <p>{{ member.designation }}</p>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</div>
- 
-
-</section>
-
-
-
-<!-- 📍 LOCATIONS -->
-
-
-<section class="locations text-center">
-    <div class="container">
-        <h2 class="section-heading">Our Presence - India</h2>
+        <h2 class="section-heading">
+            About Us
+        </h2>
 
         <div class="row justify-content-center">
-            {% for loc in locations %}
-            <div class="col-md-3">
-                <div class="location-card">
 
-                    <!-- 📍 MAP IMAGE -->
-                    {% if loc.map_image %}
-                        <div class="map-img">
-                            <img src="{{ loc.map_image.url }}" alt="{{ loc.city }}">
-                            <span class="pin">📍</span>
-                        </div>
-                    {% endif %}
+            <div class="col-lg-10">
 
-                    <h5>{{ loc.city }}</h5>
-                    <p>{{ loc.office_type }}</p>
+                <div class="glass-box text-center">
+
+                    <p class="lead mb-4">
+
+                        G.A. Enterprises & Services is a trusted
+                        engineering and industrial solutions company
+                        specializing in fabrication, tool design,
+                        welding, automation systems,
+                        CAD modeling, electrical services,
+                        and manpower supply solutions.
+
+                    </p>
+
+                    <p class="mb-4">
+
+                        Our organization is committed to delivering
+                        high-performance industrial solutions
+                        with innovation, safety, precision,
+                        and technical excellence.
+
+                    </p>
+
+                    <p>
+
+                        With experienced professionals,
+                        advanced technology,
+                        and customer-focused services,
+                        we help industries achieve
+                        operational efficiency and sustainable growth.
+
+                    </p>
 
                 </div>
+
             </div>
-            {% endfor %}
+
         </div>
+
     </div>
+
 </section>
 
+<!-- =========================================================
+     CORE SERVICES
+========================================================= -->
 
-<!-- 
-<section class="locations text-center">
+<section class="team-section">
+
     <div class="container">
-        <h2 class="section-heading">Our Presence - India</h2>
 
- 
-    <div class="row justify-content-center">
-        {% for loc in locations %}
-        <div class="col-md-3">
-            <div class="location-card">
-                <h5>{{ loc.city }}</h5>
-                <p>{{ loc.office_type }}</p>
+        <h2 class="section-heading">
+            Our Core Services
+        </h2>
+
+        <div class="row g-4">
+
+            <!-- SERVICE 1 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="team-card service-card text-center">
+
+                    <div class="service-image">
+
+                        <img src="{% static 'images/p2.jpeg' %}"
+                             alt="Mechanical Fabrication">
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <h5>
+                            Mechanical Fabrication
+                        </h5>
+
+                        <p>
+                            High-quality fabrication and engineering
+                            solutions for industrial applications.
+                        </p>
+
+                    </div>
+
+                </div>
+
             </div>
+
+            <!-- SERVICE 2 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="team-card service-card text-center">
+
+                    <div class="service-image">
+
+                        <img src="{% static 'images/p2.jpeg' %}"
+                             alt="Tool Design">
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <h5>
+                            Tool & Mould Design
+                        </h5>
+
+                        <p>
+                            Precision tool and mould design
+                            using advanced engineering methods.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SERVICE 3 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="team-card service-card text-center">
+
+                    <div class="service-image">
+
+                        <img src="{% static 'images/p2.jpeg' %}"
+                             alt="Automation">
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <h5>
+                            Automation Solutions
+                        </h5>
+
+                        <p>
+                            Smart industrial automation systems
+                            designed for productivity and efficiency.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SERVICE 4 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="team-card service-card text-center">
+
+                    <div class="service-image">
+
+                        <img src="{% static 'images/p2.jpeg' %}"
+                             alt="CAD Modeling">
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <h5>
+                            CAD Modeling
+                        </h5>
+
+                        <p>
+                            Advanced CAD modeling and simulation
+                            for engineering and industrial projects.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SERVICE 5 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="team-card service-card text-center">
+
+                    <div class="service-image">
+
+                        <img src="{% static 'images/p2.jpeg' %}"
+                             alt="Electrical Services">
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <h5>
+                            Electrical Services
+                        </h5>
+
+                        <p>
+                            Reliable electrical installation,
+                            maintenance, and industrial support.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SERVICE 6 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="team-card service-card text-center">
+
+                    <div class="service-image">
+
+                        <img src="{% static 'images/p2.jpeg' %}"
+                             alt="Manpower Supply">
+
+                    </div>
+
+                    <div class="service-content">
+
+                        <h5>
+                            Manpower Supply
+                        </h5>
+
+                        <p>
+                            Skilled and technical manpower solutions
+                            for industrial and corporate sectors.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-        {% endfor %}
+
     </div>
-</div>
-</section> -->
+
+</section>
+
+<!-- =========================================================
+     WHY CHOOSE US
+========================================================= -->
+
+<section class="locations why-section">
+
+    <div class="container">
+
+        <h2 class="section-heading">
+            Why Choose Us
+        </h2>
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-9">
+
+                <div class="glass-box why-box">
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <ul class="list-unstyled why-list">
+
+                                <li>
+                                    ✔ Experienced Technical Team
+                                </li>
+
+                                <li>
+                                    ✔ Modern Engineering Solutions
+                                </li>
+
+                                <li>
+                                    ✔ High Manufacturing Standards
+                                </li>
+
+                                <li>
+                                    ✔ Timely Project Delivery
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <ul class="list-unstyled why-list">
+
+                                <li>
+                                    ✔ Advanced Equipment & Technology
+                                </li>
+
+                                <li>
+                                    ✔ Reliable Maintenance Support
+                                </li>
+
+                                <li>
+                                    ✔ Customer-Focused Services
+                                </li>
+
+                                <li>
+                                    ✔ Innovation & Safety Commitment
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     LEADERSHIP TEAM
+========================================================= -->
+
+<section class="team-section bg-light">
+
+    <div class="container">
+
+        <h2 class="section-heading">
+            Leadership Team
+        </h2>
+
+        <div class="row g-4">
+
+            {% for member in leaders %}
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="team-card text-center">
+
+                    {% if member.image %}
+
+                    <img src="{{ member.image.url }}"
+                         alt="{{ member.name }}">
+
+                    {% endif %}
+
+                    <div class="team-content">
+
+                        <h5>
+                            {{ member.name }}
+                        </h5>
+
+                        <p>
+                            {{ member.designation }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     LOCATIONS
+========================================================= -->
+
+<section class="locations">
+
+    <div class="container">
+
+        <h2 class="section-heading">
+            Our Presence - India
+        </h2>
+
+        <div class="row justify-content-center g-4">
+
+            {% for loc in locations %}
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="location-card text-center">
+
+                    {% if loc.map_image %}
+
+                    <div class="map-img">
+
+                        <img src="{{ loc.map_image.url }}"
+                             alt="{{ loc.city }}">
+
+                        <span class="pin">
+                            📍
+                        </span>
+
+                    </div>
+
+                    {% endif %}
+
+                    <div class="location-content">
+
+                        <h5>
+                            {{ loc.city }}
+                        </h5>
+
+                        <p>
+                            {{ loc.office_type }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
 
 {% endblock %}

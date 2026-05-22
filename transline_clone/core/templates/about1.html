@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+ 
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block title %}About | G.A Enterprises & Services{% endblock %}
+
+{% block content %}
+{% load static %}
+
+
+
+
+
+<!-- 🔥 HERO -->
+
+<section class="about-hero text-center">
+    <div class="container">
+        <h1>{{ about.title }}</h1>
+        <p>{{ about.description }}</p>
+    </div>
+</section>
+
+<!-- 👑 CHAIRMAN -->
+
+{% comment %} <section class="chairman-section container">
+    <h2 class="section-heading text-center">Chairman & Managing Director</h2>
+
+ 
+<div class="row align-items-center">
+    <div class="col-md-4 text-center">
+        {% if chairman.image %}
+        <img src="{{ chairman.image.url }}" class="chairman-img">
+        {% endif %}
+    </div>
+
+    <div class="col-md-8">
+        <h3>{{ chairman.name }}</h3>
+        <h5>{{ chairman.designation }}</h5>
+        <p>{{ chairman.description }}</p>
+    </div>
+</div>
+ 
+
+</section> {% endcomment %}
+
+<!-- 🏢 BOARD -->
+
+{% comment %} <section class="team-section">
+    <div class="container">
+        <h2 class="section-heading text-center">Board of Directors</h2>
+
+ 
+    <div class="row">
+        {% for member in board %}
+        <div class="col-md-3">
+            <div class="team-card">
+                <img src="{{ member.image.url }}">
+                <h5>{{ member.name }}</h5>
+                <p>{{ member.designation }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+```
+
+</section> {% endcomment %}
+
+<!-- 👔 KEY PERSONNEL -->
+
+
+{% comment %} 
+<section class="team-section bg-light">
+    <div class="container">
+        <h2 class="section-heading text-center">Key Managerial Personnel</h2>
+
+    <div class="row">
+        {% for member in key %}
+        <div class="col-md-3">
+            <div class="team-card">
+                <img src="{{ member.image.url }}">
+                <h5>{{ member.name }}</h5>
+                <p>{{ member.designation }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+ 
+
+</section> {% endcomment %}
+
+
+
+
+
+<!-- 🚀 LEADERS -->
+
+<section class="team-section">
+    <div class="container">
+        <h2 class="section-heading text-center">Leadership Team</h2>
+
+ 
+    <div class="row">
+        {% for member in leaders %}
+        <div class="col-md-3">
+            <div class="team-card">
+                <img src="{{ member.image.url }}">
+                <h5>{{ member.name }}</h5>
+                <p>{{ member.designation }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+</section>
+
+
+
+<!-- 📍 LOCATIONS -->
+
+
+<section class="locations text-center">
+    <div class="container">
+        <h2 class="section-heading">Our Presence - India</h2>
+
+        <div class="row justify-content-center">
+            {% for loc in locations %}
+            <div class="col-md-3">
+                <div class="location-card">
+
+                    <!-- 📍 MAP IMAGE -->
+                    {% if loc.map_image %}
+                        <div class="map-img">
+                            <img src="{{ loc.map_image.url }}" alt="{{ loc.city }}">
+                            <span class="pin">📍</span>
+                        </div>
+                    {% endif %}
+
+                    <h5>{{ loc.city }}</h5>
+                    <p>{{ loc.office_type }}</p>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<!-- 
+<section class="locations text-center">
+    <div class="container">
+        <h2 class="section-heading">Our Presence - India</h2>
+
+ 
+    <div class="row justify-content-center">
+        {% for loc in locations %}
+        <div class="col-md-3">
+            <div class="location-card">
+                <h5>{{ loc.city }}</h5>
+                <p>{{ loc.office_type }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</section> -->
+
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+ 
+<link rel="stylesheet" href="{% static 'css/category.css' %}">
+{% endblock %}
+
+{% block title %}Product | G.A Enterprises & Services{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<section class="category-detail-page">
+
+    <div class="container">
+
+        <!-- TITLE -->
+        <div class="text-center mb-5">
+
+            <h1 class="category-title">
+                {{ category.name }}
+            </h1>
+
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="category-card">
+
+            <div class="card-body">
+
+                <h2>
+                    Overview
+                </h2>
+
+                <p>
+                    {{ category.overview }}
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- SPECIFICATIONS -->
+        <div class="category-card">
+
+            <div class="card-body">
+
+                <h2>
+                    Specifications
+                </h2>
+
+                <p>
+                    {{ category.specifications }}
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- GALLERY -->
+        <div class="category-card">
+
+            <div class="card-body">
+
+                <h2>
+                    Gallery
+                </h2>
+
+                <div class="row">
+
+                    {% if category.gallery_image1 %}
+
+                    <div class="col-md-6 mb-4">
+
+                        <div class="gallery-wrapper">
+
+                            <img src="{{ category.gallery_image1.url }}"
+                                 class="gallery-img">
+
+                        </div>
+
+                    </div>
+
+                    {% endif %}
+
+                    {% if category.gallery_image2 %}
+
+                    <div class="col-md-6 mb-4">
+
+                        <div class="gallery-wrapper">
+
+                            <img src="{{ category.gallery_image2.url }}"
+                                 class="gallery-img">
+
+                        </div>
+
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

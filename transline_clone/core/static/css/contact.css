@@ -1,0 +1,371 @@
+/* =========================================================
+   CONTACT PAGE - PREMIUM PROFESSIONAL UI
+========================================================= */
+
+:root{
+    --primary:#0ea5e9;
+    --secondary:#2563eb;
+    --dark:#0f172a;
+    --text:#475569;
+    --light:#f8fafc;
+    --white:#ffffff;
+    --border:rgba(15,23,42,0.08);
+}
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.contact-section{
+    padding:100px 0;
+
+    background:
+        linear-gradient(to bottom,
+        #f8fbff,
+        #ffffff);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.contact-heading{
+    font-size:4rem;
+    font-weight:900;
+
+    color:var(--dark);
+
+    position:relative;
+
+    display:inline-block;
+
+    margin-bottom:15px;
+
+    letter-spacing:-2px;
+}
+
+.contact-heading::after{
+    content:"";
+
+    width:90px;
+    height:4px;
+
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+
+    position:absolute;
+
+    left:50%;
+    bottom:-14px;
+
+    transform:translateX(-50%);
+
+    border-radius:50px;
+}
+
+/* =========================================================
+   LEFT CONTACT INFO
+========================================================= */
+
+.contact-info{
+    padding-right:40px;
+}
+
+.contact-info h2{
+    font-size:2.4rem;
+    font-weight:800;
+
+    color:var(--dark);
+
+    margin-bottom:20px;
+
+    line-height:1.3;
+}
+
+.contact-info > p{
+    font-size:1.05rem;
+
+    color:var(--text);
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+}
+
+/* ---------- DETAILS ---------- */
+
+.contact-details{
+    margin-bottom:35px;
+}
+
+.contact-details p{
+    background:var(--white);
+
+    padding:18px 22px;
+
+    border-radius:18px;
+
+    margin-bottom:18px;
+
+    font-size:1rem;
+
+    color:var(--dark);
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 8px 25px rgba(15,23,42,0.05);
+
+    transition:all .3s ease;
+}
+
+.contact-details p:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(15,23,42,0.08);
+}
+
+/* =========================================================
+   MAP
+========================================================= */
+
+.contact-map{
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.08);
+
+    border:1px solid var(--border);
+}
+
+.contact-map iframe{
+    width:100%;
+    height:320px;
+
+    border:0;
+}
+
+/* =========================================================
+   FORM BOX
+========================================================= */
+
+.contact-form-box{
+    background:var(--white);
+
+    padding:50px;
+
+    border-radius:32px;
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 20px 60px rgba(15,23,42,0.08);
+
+    position:relative;
+}
+
+.contact-form-box::before{
+    content:"";
+
+    position:absolute;
+
+    width:140px;
+    height:140px;
+
+    background:
+        radial-gradient(circle,
+        rgba(14,165,233,0.18),
+        transparent 70%);
+
+    top:-40px;
+    right:-40px;
+
+    border-radius:50%;
+}
+
+/* ---------- FORM TITLE ---------- */
+
+.contact-form-box h3{
+    font-size:2rem;
+    font-weight:800;
+
+    color:var(--dark);
+
+    margin-bottom:35px;
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.contact-form-box input,
+.contact-form-box textarea{
+    width:100%;
+
+    border:none;
+
+    background:#f8fafc;
+
+    padding:18px 22px;
+
+    border-radius:18px;
+
+    margin-bottom:22px;
+
+    font-size:1rem;
+
+    color:var(--dark);
+
+    border:1px solid transparent;
+
+    transition:all .3s ease;
+}
+
+/* ---------- FOCUS ---------- */
+
+.contact-form-box input:focus,
+.contact-form-box textarea:focus{
+    outline:none;
+
+    border-color:var(--primary);
+
+    background:#ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(14,165,233,0.12);
+}
+
+/* ---------- TEXTAREA ---------- */
+
+.contact-form-box textarea{
+    resize:none;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.contact-form-box button{
+    border:none;
+
+    background:
+        linear-gradient(135deg,
+        var(--primary),
+        var(--secondary));
+
+    color:var(--white);
+
+    padding:16px 38px;
+
+    border-radius:50px;
+
+    font-size:1rem;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:all .35s ease;
+
+    box-shadow:
+        0 12px 30px rgba(37,99,235,0.25);
+}
+
+.contact-form-box button:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 18px 40px rgba(37,99,235,0.35);
+}
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+#successMsg{
+    margin-top:20px;
+
+    font-weight:600;
+
+    color:#16a34a;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:991px){
+
+    .contact-section{
+        padding:80px 0;
+    }
+
+    .contact-heading{
+        font-size:3rem;
+    }
+
+    .contact-info{
+        padding-right:0;
+        margin-bottom:50px;
+    }
+
+    .contact-form-box{
+        padding:40px;
+    }
+}
+
+@media(max-width:768px){
+
+    .contact-heading{
+        font-size:2.5rem;
+    }
+
+    .contact-info h2{
+        font-size:2rem;
+    }
+
+    .contact-form-box{
+        padding:30px;
+        border-radius:24px;
+    }
+
+    .contact-form-box h3{
+        font-size:1.7rem;
+    }
+
+    .contact-map iframe{
+        height:260px;
+    }
+}
+
+@media(max-width:576px){
+
+    .contact-section{
+        padding:70px 0;
+    }
+
+    .contact-heading{
+        font-size:2rem;
+    }
+
+    .contact-info h2{
+        font-size:1.6rem;
+    }
+
+    .contact-form-box{
+        padding:24px;
+    }
+
+    .contact-form-box button{
+        width:100%;
+    }
+
+    .contact-details p{
+        font-size:.95rem;
+    }
+}

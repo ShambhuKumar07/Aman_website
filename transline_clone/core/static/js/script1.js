@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // =========================
-    // ✨ SCROLL ANIMATION (FADE + LEFT + RIGHT)
+    //  SCROLL ANIMATION (FADE + LEFT + RIGHT)
     // =========================
     const elements = document.querySelectorAll(".fade-in, .animate-left, .animate-right");
 
@@ -108,29 +108,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// =========================
-// 📊 COUNTER ANIMATION
-// =========================
-const counters = document.querySelectorAll(".counter");
+document.addEventListener("DOMContentLoaded", function () {
 
-counters.forEach(counter => {
-    counter.innerText = "0";
+    const counters = document.querySelectorAll(".counter");
 
-    const updateCounter = () => {
-        const target = +counter.getAttribute("data-target");
-        const count = +counter.innerText;
+    counters.forEach(counter => {
+        counter.innerText = "0";
 
-        const increment = target / 100;
+        const updateCounter = () => {
+            const target = +counter.getAttribute("data-target");
+            const count = +counter.innerText;
 
-        if (count < target) {
-            counter.innerText = Math.ceil(count + increment);
-            setTimeout(updateCounter, 20);
-        } else {
-            counter.innerText = target;
-        }
-    };
+            const increment = target / 100;
 
-    updateCounter();
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCounter, 20);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        updateCounter();
+    });
+
 });
 
 
@@ -144,8 +145,6 @@ window.addEventListener("scroll", function () {
         bg.style.transform = `translateY(${offset * 0.3}px)`;
     }
 });
-
-
 
 
 // PRODUCTS animation
@@ -196,9 +195,6 @@ industryCards.forEach(card => {
 });
 
 
-
-
-
 // footer animation
 const footer = document.querySelector(".footer-section");
 
@@ -212,39 +208,11 @@ const observerFooter = new IntersectionObserver(entries => {
 
 if (footer) observerFooter.observe(footer);
 
-
-
-
-
-
-
-
-// contact
-
-
-document.getElementById("contactForm")?.addEventListener("submit", function(e){
-    e.preventDefault();
-
-    let formData = new FormData(this);
-
-    fetch("/contact/", {
-        method: "POST",
-        body: formData
-    })
-    .then(res => res.json())
-    .then(data => {
-        document.getElementById("successMsg").innerText = "✅ Message sent successfully!";
-        this.reset();
-    });
-});
-
-
-// why
 // =========================
-// 🔥 WHY CHOOSE US COUNTER (FINAL)
+//  WHY CHOOSE US COUNTER  
 // =========================
 
-// const whyCounters = document.querySelectorAll(".why-counter");
+ 
 
 const whyCounters = document.querySelectorAll(".why-number");
 
@@ -288,13 +256,9 @@ if (whySection) whyObserver.observe(whySection);
 // 🎬 CERTIFICATION AUTO SLIDER
 // =============================
 
-// =============================
-// 🎬 CERTIFICATION PRO MAX FIXED
-// =============================
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    const slider = document.getElementById("certSlider");
+    const certSlider = document.getElementById("certSlider");
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
 
@@ -303,14 +267,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let autoSlide;
 
     // 🔁 CLONE FOR INFINITE LOOP
-    slider.innerHTML += slider.innerHTML;
+    certSlider.innerHTML += certSlider.innerHTML;
 
     // ✅ AFTER CLONE (IMPORTANT FIX)
-    let cards = slider.querySelectorAll(".cert-card");
+    let cards = certSlider.querySelectorAll(".cert-card");
     let totalCards = cards.length / 2;
 
     function updateSlider() {
-        slider.style.transform = `translateX(-${index * cardWidth}px)`;
+        certSlider.style.transform = `translateX(-${index * cardWidth}px)`;
 
         // CENTER EFFECT
         cards.forEach((card, i) => {
@@ -354,14 +318,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // BUTTONS
-    nextBtn.addEventListener("click", nextSlide);
-    prevBtn.addEventListener("click", prevSlide);
+
+
+    if (nextBtn) nextBtn.addEventListener("click", nextSlide);
+if (prevBtn) prevBtn.addEventListener("click", prevSlide);
 
     // HOVER PAUSE
-    slider.addEventListener("mouseenter", stopAuto);
-    slider.addEventListener("mouseleave", startAuto);
+ 
 
-    // 🟢 INITIAL LOAD FIX (VERY IMPORTANT)
+    certSlider.addEventListener("mouseenter", stopAuto);
+certSlider.addEventListener("mouseleave", startAuto);
+
+ 
     updateSlider();
     startAuto();
 
@@ -399,30 +367,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
-
 // =============================
 // 🎬 SERVICES AUTO SLIDER (2 ROW)
 // =============================
-// =============================
-// 🎬 SERVICES AUTO SLIDER
-// =============================
+
 document.addEventListener("DOMContentLoaded", function () {
 
-    const slider = document.getElementById("servicesSlider");
+    const servicesSlider = document.getElementById("servicesSlider");
     const prevBtn = document.getElementById("prevSlide");
     const nextBtn = document.getElementById("nextSlide");
 
-    if (!slider) return;
+    if (!servicesSlider) return;
 
     let index = 0;
     let autoSlide;
 
-    const slides = slider.children;
+    const slides = servicesSlider.children;
     const totalSlides = slides.length;
 
+    // =============================
+    // 🔄 UPDATE SLIDER
+    // =============================
     function updateSlider() {
-        slider.style.transform = `translateX(-${index * 100}%)`;
+        servicesSlider.style.transform = `translateX(-${index * 100}%)`;
     }
 
     function nextSlide() {
@@ -435,11 +402,15 @@ document.addEventListener("DOMContentLoaded", function () {
         updateSlider();
     }
 
-    // arrows
-    nextBtn.addEventListener("click", nextSlide);
-    prevBtn.addEventListener("click", prevSlide);
+    // =============================
+    // 🔘 BUTTONS (SAFE CHECK)
+    // =============================
+    if (nextBtn) nextBtn.addEventListener("click", nextSlide);
+    if (prevBtn) prevBtn.addEventListener("click", prevSlide);
 
-    // autoplay
+    // =============================
+    // ⏱️ AUTOPLAY
+    // =============================
     function startAuto() {
         autoSlide = setInterval(nextSlide, 4000);
     }
@@ -448,35 +419,38 @@ document.addEventListener("DOMContentLoaded", function () {
         clearInterval(autoSlide);
     }
 
-    slider.addEventListener("mouseenter", stopAuto);
-    slider.addEventListener("mouseleave", startAuto);
+    servicesSlider.addEventListener("mouseenter", stopAuto);
+    servicesSlider.addEventListener("mouseleave", startAuto);
 
     startAuto();
 
     // =============================
-    // 🖱️ DRAG SUPPORT
+    // 🖱️ DRAG SUPPORT (FIXED)
     // =============================
-
     let isDragging = false;
     let startX = 0;
+    let moveX = 0;
 
-    slider.addEventListener("mousedown", (e) => {
+    servicesSlider.addEventListener("mousedown", (e) => {
         isDragging = true;
         startX = e.pageX;
-        slider.style.transition = "none";
+        servicesSlider.style.transition = "none";
     });
 
-    slider.addEventListener("mousemove", (e) => {
+    servicesSlider.addEventListener("mousemove", (e) => {
         if (!isDragging) return;
-        const moveX = e.pageX - startX;
-        slider.style.transform = `translateX(calc(-${index * 100}% + ${moveX}px))`;
+
+        moveX = e.pageX - startX;
+
+        servicesSlider.style.transform =
+            `translateX(calc(-${index * 100}% + ${moveX}px))`;
     });
 
-    slider.addEventListener("mouseup", (e) => {
-        isDragging = false;
-        slider.style.transition = "transform 0.8s ease";
+    servicesSlider.addEventListener("mouseup", () => {
+        if (!isDragging) return;
 
-        const moveX = e.pageX - startX;
+        isDragging = false;
+        servicesSlider.style.transition = "transform 0.8s ease";
 
         if (moveX > 100) {
             prevSlide();
@@ -487,14 +461,34 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    slider.addEventListener("mouseleave", () => {
+    servicesSlider.addEventListener("mouseleave", () => {
         if (isDragging) {
             isDragging = false;
-            slider.style.transition = "transform 0.8s ease";
+            servicesSlider.style.transition = "transform 0.8s ease";
             updateSlider();
         }
     });
 
+    // =============================
+    //  TOUCH SUPPORT (MOBILE)
+    // =============================
+    servicesSlider.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    servicesSlider.addEventListener("touchmove", (e) => {
+        moveX = e.touches[0].clientX - startX;
+    });
+
+    servicesSlider.addEventListener("touchend", () => {
+        if (moveX > 50) {
+            prevSlide();
+        } else if (moveX < -50) {
+            nextSlide();
+        }
+    });
+
+    // INIT
     updateSlider();
 });
 

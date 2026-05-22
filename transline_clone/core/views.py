@@ -7,20 +7,24 @@ from .models import Certification
 # =========================
 # 🏠 HOME VIEW
 # =========================
+ 
+from .models import ProductCategory
+
+def base(request):
+    return render(request,'base.html')
+
+
+
+
 def home(request):
+
     about_items = About.objects.all()
     main_about = About.objects.filter(is_main=True).first()
 
-    # 🔥 NAVBAR AUTO GROUPING
-    parents = NavProduct.objects.filter(parent__isnull=True)
     certifications = Certification.objects.all()
 
-    grouped_products = []
-    for parent in parents:
-        grouped_products.append({
-            'parent': parent,
-            'children': parent.children.all()
-        })
+    # ONLY MAIN CATEGORY
+    navbar_categories = ProductCategory.objects.filter(parent=None)
 
     context = {
         'banners': Banner.objects.all(),
@@ -30,30 +34,22 @@ def home(request):
         'about_items': about_items,
         'main_about': main_about,
 
-        # 🔥 Navbar Data
-        'grouped_products': grouped_products,
+        'navbar_categories': navbar_categories,
         'certifications': certifications,
     }
 
     return render(request, 'home.html', context)
 
 
-# =========================
-# 📦 PRODUCT DETAIL (NEW 🔥)
-# =========================
-def product_detail(request, slug):
-    product = NavProduct.objects.get(slug=slug)
-
-    return render(request, "product_detail.html", {
-        "product": product
-    })
 
 
+ 
 # =========================
 # 📞 CONTACT VIEW
 # =========================
 def contact_view(request):
     contact_info = ContactInfo.objects.first()
+    navbar_categories = ProductCategory.objects.filter(parent=None)
 
     if request.method == "POST":
         name = request.POST.get("name")
@@ -69,7 +65,8 @@ def contact_view(request):
         return JsonResponse({"status": "success"})
 
     return render(request, "contact.html", {
-        "contact_info": contact_info
+        "contact_info": contact_info,
+        'navbar_categories': navbar_categories,
     })
 
 
@@ -112,13 +109,63 @@ def about_view(request):
 
     locations = AboutLocation.objects.all()
 
+    navbar_categories = ProductCategory.objects.filter(parent=None)
+
     return render(request, "about.html", {
         "about": about,
         "chairman": chairman,
         "board": board,
         "key": key,
         "leaders": leaders,
-        "locations": locations
+        "locations": locations,
+        'navbar_categories': navbar_categories,
     })
 
 
+
+
+
+from django.shortcuts import get_object_or_404
+
+
+# # CATEGORY DETAIL PAGE
+# def category_detail(request, slug):
+#     navbar_categories = ProductCategory.objects.filter(parent=None)
+#     category = get_object_or_404(
+#         ProductCategory,
+#         slug=slug
+#     )
+
+#     context = {
+#         'category': category
+#     }
+
+#     return render(
+#         request,
+#         'category_detail.html',
+#         context
+#         'navbar_categories': navbar_categories,
+#     )
+
+
+
+# CATEGORY DETAIL PAGE
+def category_detail(request, slug):
+
+    navbar_categories = ProductCategory.objects.filter(parent=None)
+
+    category = get_object_or_404(
+        ProductCategory,
+        slug=slug
+    )
+
+    context = {
+        'category': category,
+        'navbar_categories': navbar_categories,
+    }
+
+    return render(
+        request,
+        'category_detail.html',
+        context
+    )

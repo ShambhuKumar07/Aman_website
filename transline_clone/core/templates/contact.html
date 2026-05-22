@@ -1,5 +1,17 @@
 {% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+ 
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block title %}Contact | G.A Enterprises & Services{% endblock %}
+
 {% block content %}
+{% load static %}
+
 
 <div class="contact-section">
  

@@ -8,15 +8,8 @@
     <!-- Mobile Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- SEO -->
-<!-- SEO -->
- <!-- SEO -->
-  <!-- SEO -->
-   <!-- SEO -->
-    <!-- SEO -->
-     <!-- SEO -->
-
     <title>{% block title %}G.A Enterprises & Services{% endblock %}</title>
+    {% comment %} <title>{% block title %}Incise Infotech Ltd{% endblock %}</title> {% endcomment %}
 
     <!-- Favicon -->
     {% comment %} <link rel="icon" type="image/png" href="{% static 'images/favicon.ico' %}"> {% endcomment %}
@@ -29,11 +22,16 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    {% block extra_css %}{% endblock %}
+
+
 </head>
 
 <body>
@@ -48,89 +46,76 @@
 
     <!-- Company Name -->
     <span class="ms-2 brand-text">G.A Enterprises & Services</span>
+    {% comment %} <span class="ms-2 brand-text">Incise Infotech Ltd</span> {% endcomment %}
 
 </a>
 
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+  <button class="navbar-toggler border-0 shadow-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu">
+
+    <span class="navbar-toggler-icon"></span>
+
+</button>
 
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link text-white" href="/">Home</a></li>
 
 
+<li class="nav-item mega-dropdown">
 
-
-
-                
-<li class="nav-item mega-dropdown position-static">
-
-    <a class="nav-link text-white" href="" id="megaTrigger">
+    <a class="nav-link text-white" href="#" id="megaTrigger">
         Products
     </a>
 
-    <div class="mega-menu">
-        <div class="container-fluid px-4">
-            <div class="row align-items-start">
 
-                <!-- CATEGORY -->
-                <div class="col-lg-3 col-md-6">
-                    <h6 class="mega-title">Electronics</h6>
 
-                    <a href="#" class="mega-item">
-                        <span>📱</span> Mobile Devices
-                    </a>
-                    <a href="#" class="mega-item">
-                        <span>💻</span> Laptops
-                    </a>
-                    <a href="#" class="mega-item">
-                        <span>🎧</span> Accessories
-                    </a>
-                </div>
 
-                <!-- CATEGORY -->
-                <div class="col-lg-3 col-md-6">
-                    <h6 class="mega-title">Industrial</h6>
 
-                    <a href="#" class="mega-item">
-                        <span>⚙️</span> Machinery
-                    </a>
-                    <a href="#" class="mega-item">
-                        <span>🔌</span> Electrical
-                    </a>
-                    <a href="#" class="mega-item">
-                        <span>🧰</span> Tools
-                    </a>
-                </div>
+<div class="mega-menu">
 
-                <!-- CATEGORY -->
-                <div class="col-lg-3 col-md-6">
-                    <h6 class="mega-title">Services</h6>
+    <div class="mega-inner">
 
-                    <a href="#" class="mega-item">
-                        <span>🚚</span> Logistics
-                    </a>
-                    <a href="#" class="mega-item">
-                        <span>🏗️</span> Construction
-                    </a>
-                    <a href="#" class="mega-item">
-                        <span>🛠️</span> Maintenance
-                    </a>
-                </div>
+        <div class="row align-items-start">
 
-                <!-- FEATURE BOX -->
-                <div class="col-lg-3 d-none d-lg-block">
-                    <div class="mega-highlight">
-                        <h5>🔥 Featured</h5>
-                        <p>Explore our premium solutions for your business growth.</p>
-                        <a href="#" class="btn btn-primary btn-sm">View All</a>
-                    </div>
-                </div>
+            {% for category in navbar_categories %}
+
+            <div class="col-lg-4 col-md-6">
+
+                <h6 class="mega-title">
+                    {{ category.name }}
+                </h6>
+
+                {% for child in category.children.all %}
+
+                <a href="{% url 'category_detail' child.slug %}"
+                   class="mega-item">
+
+                    {% if child.icon %}
+                        <span>{{ child.icon }}</span>
+                    {% endif %}
+
+                    {{ child.name }}
+
+                </a>
+
+                {% empty %}
+
+                <p>No Sub Categories</p>
+
+                {% endfor %}
 
             </div>
+
+            {% endfor %}
+
         </div>
+
     </div>
+
+</div>
 
 </li>
 
@@ -144,9 +129,9 @@
 </nav>
 
 <!-- Page Content -->
-<div>
+<main>
     {% block content %}{% endblock %}
-</div>
+</main>
 
 <!-- 🔻 Dynamic Footer -->
 
@@ -242,6 +227,7 @@
         <!-- BOTTOM -->
         <div class="footer-bottom text-center">
             <p>© {{ now|date:"Y" }} G.A Enterprises & Services. All Rights Reserved</p>
+            {% comment %} <p>© {{ now|date:"Y" }} Incise Infotech Ltd. All Rights Reserved</p> {% endcomment %}
         </div>
 
     </div>
