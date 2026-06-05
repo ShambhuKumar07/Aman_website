@@ -57,3 +57,46 @@ from .models import ProductCategory
 @admin.register(ProductCategory)
 class ProductCategoryAdmin(DraggableMPTTAdmin):
     prepopulated_fields = {'slug': ('name',)}
+
+
+
+# from mptt.admin import DraggableMPTTAdmin
+# from .models import ServiceCategory
+
+ 
+
+
+# from django.contrib import admin
+# from .models import ServiceCategory
+
+
+# @admin.register(ServiceCategory)
+# class ServiceCategoryAdmin(admin.ModelAdmin):
+
+#     prepopulated_fields = {
+#         'slug': ('name',)
+#     }
+
+
+from django.contrib import admin
+from mptt.admin import DraggableMPTTAdmin
+from .models import ServiceCategory
+
+
+@admin.register(ServiceCategory)
+class ServiceCategoryAdmin(DraggableMPTTAdmin):
+
+    prepopulated_fields = {
+        'slug': ('name',)
+    }
+
+    mptt_indent_field = "name"
+
+    list_display = (
+        'tree_actions',
+        'indented_title',
+    )
+
+    list_display_links = (
+        'indented_title',
+    )

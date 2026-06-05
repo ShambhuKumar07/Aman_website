@@ -52,6 +52,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+
+// ###############
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const serviceTrigger =
+        document.getElementById("serviceTrigger");
+
+    const serviceMenu =
+        document.getElementById("serviceMenu");
+
+    if (serviceTrigger && serviceMenu) {
+
+        serviceTrigger.addEventListener("click", function(e){
+
+            if(window.innerWidth <= 992){
+
+                e.preventDefault();
+
+                serviceMenu.classList.toggle("active");
+
+            }
+
+        });
+
+    }
+
+});
+
+
+
+
+
 /* =========================================
    HERO AUTO SLIDER
 ========================================= */

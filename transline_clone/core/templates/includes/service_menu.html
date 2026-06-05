@@ -1,0 +1,60 @@
+{% for item in services %}
+
+    <!-- Tool & Mould Design Special Menu -->
+    {% if item.name == "Tool & Mould Design" %}
+
+        <div class="menu-group">
+
+            <div class="menu-title toggle-submenu">
+                <span>{{ item.name }}</span>
+                <i class="fas fa-chevron-down menu-arrow"></i>
+            </div>
+
+            <div class="submenu">
+
+                <a href="{% url 'progressive_die_tooling' %}"
+                   class="mega-item">
+                    Progressive Die Tooling
+                </a>
+
+                <a href="{% url 'prototyping_services' %}"
+                   class="mega-item">
+                    Prototyping Services
+                </a>
+
+            </div>
+
+        </div>
+
+    {% elif item.children.exists %}
+
+        <div class="menu-group">
+
+            <div class="menu-title toggle-submenu">
+
+                <span>{{ item.name }}</span>
+
+                <i class="fas fa-chevron-down menu-arrow"></i>
+
+            </div>
+
+            <div class="submenu">
+
+                {% include "includes/service_menu.html" with services=item.children.all %}
+
+            </div>
+
+        </div>
+
+    {% else %}
+
+        <a href="{% url 'service_detail' item.slug %}"
+           class="mega-item">
+
+            {{ item.name }}
+
+        </a>
+
+    {% endif %}
+
+{% endfor %}

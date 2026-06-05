@@ -1,0 +1,408 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Progressive Die Tooling Services | Progressive Die Design & Manufacturing | G.A. Enterprises
+{% endblock %}
+
+{% block meta_description %}
+High-precision Progressive Die Tooling services by G.A. Enterprises. We specialize in progressive die design, metal stamping, tool development, prototype tooling, and high-volume manufacturing solutions.
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/progressive_die_tooling.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero">
+
+    <img src="{% static 'images/img/b.png' %}"
+         alt="Progressive Die Tooling Services"
+         class="hero-banner">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <h1>Progressive Die Tooling Solutions</h1>
+
+        <p>
+            Precision-engineered progressive die tooling for
+            high-volume metal stamping, superior accuracy,
+            reduced production cost, and maximum efficiency.
+        </p>
+
+        <a href="/contact/" class="hero-btn">
+            Request a Quote
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<section class="section about-tooling-section">
+
+    <div class="about-tooling-card">
+
+        <div class="about-tooling-image">
+
+            <img src="{% static 'images/img/t.png' %}"
+                 alt="Progressive Die Tooling Process">
+
+        </div>
+
+        <div class="about-tooling-content">
+
+
+            <h2>
+                What is Progressive Die Tooling?
+            </h2>
+
+            <p>
+                Progressive die tooling is an advanced metal stamping
+                technology used to manufacture high-precision components
+                through a sequence of automated operations within a
+                single die system.
+            </p>
+
+            <p>
+                As the metal strip moves through multiple stations,
+                operations such as punching, blanking, forming,
+                bending, and trimming are performed simultaneously,
+                ensuring exceptional productivity and accuracy.
+            </p>
+
+            <div class="tooling-features">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<div class="container">
+    <!-- ABOUT -->
+    <section class="section">
+    </section>
+
+
+
+<section class="section process-section">
+
+    <h2 class="section-title">
+        How Progressive Die Tooling Works
+    </h2>
+
+<div class="process-image-wrapper">
+    <img src="{% static 'images/img/w.png' %}"
+         alt="Process"
+         class="process-image">
+</div>
+
+    <div class="process-content">
+
+        <p>
+            Progressive die tooling is a continuous metal stamping process
+            used to manufacture precision components efficiently and in high volumes.
+            A metal strip is fed from a coil into a stamping press equipped with
+            a progressive die containing multiple workstations.
+        </p>
+
+        <p>
+            As the strip advances through each station, different operations such as
+            punching, blanking, bending, forming, and trimming are performed.
+            Multiple operations occur simultaneously during every press stroke,
+            allowing the component to gradually take shape until the finished part
+            is separated at the final station.
+        </p>
+
+    </div>
+
+    <div class="process-grid">
+
+        <div class="process-step">
+            <span>01</span>
+            <h4>Coil Feeding</h4>
+            <p>Metal strip material is automatically fed into the stamping press.</p>
+        </div>
+
+        <div class="process-step">
+            <span>02</span>
+            <h4>Station Operations</h4>
+            <p>Each station performs a specific manufacturing operation.</p>
+        </div>
+
+        <div class="process-step">
+            <span>03</span>
+            <h4>Material Advancement</h4>
+            <p>The strip advances after every press stroke.</p>
+        </div>
+
+        <div class="process-step">
+            <span>04</span>
+            <h4>Simultaneous Processing</h4>
+            <p>Multiple manufacturing processes occur at the same time.</p>
+        </div>
+
+        <div class="process-step">
+            <span>05</span>
+            <h4>Final Separation</h4>
+            <p>The completed component is separated at the final station.</p>
+        </div>
+
+        <div class="process-step">
+            <span>06</span>
+            <h4>Scrap Recycling</h4>
+            <p>Remaining material is collected and recycled efficiently.</p>
+        </div>
+
+    </div>
+
+    <div class="process-highlight">
+
+        <h3>Manufacturing Benefits</h3>
+
+        <p>
+            This fully automated process ensures high production speed,
+            excellent dimensional accuracy, reduced material waste,
+            lower labor requirements, and consistent product quality,
+            making progressive die tooling ideal for mass production.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+{% comment %} 
+    <!-- PROCESS -->
+    <section class="section">
+
+        <h2 class="section-title">
+            How Progressive Die Tooling Works
+        </h2>
+
+        <img src="{% static 'images/img/process.png' %}"
+             alt="Progressive Die Process"
+             class="full-image">
+
+        <div class="process-grid">
+
+            <div class="process-step">1. Coil Feeding</div>
+            <div class="process-step">2. Punching</div>
+            <div class="process-step">3. Forming</div>
+            <div class="process-step">4. Bending</div>
+            <div class="process-step">5. Trimming</div>
+            <div class="process-step">6. Final Component</div>
+
+        </div>
+
+    </section> {% endcomment %}
+
+
+    <!-- CAPABILITIES -->
+    <section class="section">
+
+        <h2 class="section-title">
+            Our Tooling Capabilities
+        </h2>
+
+        <div class="card-grid">
+
+            <div class="card">
+                <img src="{% static 'images/img/design.png' %}">
+                <h3>Progressive Die Design</h3>
+            </div>
+
+            <div class="card">
+                <img src="{% static 'images/img/manufacturing.png' %}">
+                <h3>Tool Manufacturing</h3>
+            </div>
+
+            <div class="card">
+                <img src="{% static 'images/img/cad.png' %}">
+                <h3>CAD/CAM Engineering</h3>
+            </div>
+
+            <div class="card">
+                <img src="{% static 'images/img/prototype.png' %}">
+                <h3>Prototype Tooling</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BENEFITS -->
+    <section class="section">
+
+        <h2 class="section-title">
+            Benefits of Progressive Die Tooling
+        </h2>
+
+        <div class="card-grid">
+
+            <div class="card">
+                <h3>High Precision</h3>
+                <p>Consistent dimensions and repeatable quality.</p>
+            </div>
+
+            <div class="card">
+                <h3>Fast Production</h3>
+                <p>Multiple operations in a single press cycle.</p>
+            </div>
+
+            <div class="card">
+                <h3>Reduced Cost</h3>
+                <p>Lower labor and manufacturing expenses.</p>
+            </div>
+
+            <div class="card">
+                <h3>Material Efficiency</h3>
+                <p>Optimized strip layouts reduce scrap.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY CHOOSE -->
+    <section class="section">
+
+        <h2 class="section-title">
+            Why Choose G.A. Enterprises?
+        </h2>
+
+        <div class="card-grid">
+
+            <div class="card">
+                <h3>Precision Engineering</h3>
+                <p>Expertise in progressive tooling and metal stamping.</p>
+            </div>
+
+            <div class="card">
+                <h3>In-House Manufacturing</h3>
+                <p>Design, production, validation and testing.</p>
+            </div>
+
+            <div class="card">
+                <h3>Quality Assurance</h3>
+                <p>Strict inspection and quality control systems.</p>
+            </div>
+
+            <div class="card">
+                <h3>Timely Delivery</h3>
+                <p>Reliable project execution and delivery schedules.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INDUSTRIES -->
+    <section class="section">
+
+        <h2 class="section-title">
+            Industries We Serve
+        </h2>
+
+        <div class="card-grid">
+
+            <div class="card">
+                <h3>Automotive</h3>
+            </div>
+
+            <div class="card">
+                <h3>Electrical & Electronics</h3>
+            </div>
+
+            <div class="card">
+                <h3>Medical Equipment</h3>
+            </div>
+
+            <div class="card">
+                <h3>Industrial Equipment</h3>
+            </div>
+
+            <div class="card">
+                <h3>Consumer Products</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="section">
+
+        <h2 class="section-title">
+            Frequently Asked Questions
+        </h2>
+
+        <div class="faq-item">
+            <h3>What is a progressive die?</h3>
+            <p>
+                A tooling system that performs multiple operations
+                on a metal strip through sequential stations.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What industries use progressive tooling?</h3>
+            <p>
+                Automotive, electronics, industrial equipment,
+                medical devices and consumer goods.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Is progressive tooling suitable for mass production?</h3>
+            <p>
+                Yes. It is one of the most efficient methods
+                for high-volume manufacturing.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta-section">
+
+        <h2>
+            Looking for Progressive Die Tooling Solutions?
+        </h2>
+
+        <p>
+            Contact our engineering team for customized tooling,
+            precision manufacturing, and high-volume production support.
+        </p>
+
+        <a href="/contact/" class="cta-btn">
+            Contact Us Today
+        </a>
+
+    </section>
+
+</div>
+
+{% endblock %}

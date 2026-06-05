@@ -1,5 +1,37 @@
 
 
+/* =========================================================
+   HOME PAGE PREMIUM CSS
+   G.A Enterprises & Services
+========================================================= */
+
+/* =========================================================
+   GLOBAL SECTION SPACING
+========================================================= */
+
+section,
+.about-section,
+.services-section,
+.why-section,
+.cert-section,
+.products-section{
+    position:relative;
+    overflow:hidden;
+}
+
+h1,h2,h3,h4,h5,h6{
+    line-height:1.25;
+    font-weight:700;
+    color:#0f172a;
+    margin-bottom:18px;
+}
+
+p{
+    font-size:16px;
+    line-height:1.9;
+    color:#64748b;
+    margin-bottom:18px;
+}
 
 /* =========================================================
    HERO SECTION
@@ -36,11 +68,14 @@
 .hero-overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(
+
+    background:
+    linear-gradient(
         to right,
-        rgba(2,6,23,0.82),
-        rgba(2,6,23,0.35)
+        rgba(2,6,23,0.88),
+        rgba(2,6,23,0.45)
     );
+
     z-index:1;
 }
 
@@ -50,8 +85,11 @@
     left:8%;
     transform:translateY(-50%);
     z-index:5;
+
     color:#fff;
-    max-width:700px;
+
+    max-width:720px;
+
     animation:heroFade 1.2s ease;
 }
 
@@ -60,6 +98,7 @@
         opacity:0;
         transform:translateY(-35%);
     }
+
     to{
         opacity:1;
         transform:translateY(-50%);
@@ -68,25 +107,41 @@
 
 .small-text{
     color:#38bdf8;
+
     font-size:15px;
+
     letter-spacing:3px;
-    margin-bottom:14px;
+
+    margin-bottom:18px;
+
     text-transform:uppercase;
+
     font-weight:600;
 }
 
 .hero-content h1{
-    font-size:68px;
-    line-height:1.15;
+    font-size:72px;
+
+    line-height:1.1;
+
     font-weight:700;
-    margin-bottom:24px;
+
+    margin-bottom:28px;
+
+    color:#ffffff;
 }
 
 .hero-content p{
     font-size:18px;
+
     line-height:1.9;
+
     color:#e2e8f0;
+
+    max-width:650px;
 }
+
+/* HERO ARROWS */
 
 .hero-arrow{
     position:absolute;
@@ -98,6 +153,7 @@
     height:58px;
 
     border-radius:50%;
+
     background:rgba(255,255,255,0.15);
 
     display:flex;
@@ -105,15 +161,19 @@
     justify-content:center;
 
     color:#fff;
-    font-size:26px;
+
+    font-size:24px;
+
     cursor:pointer;
 
     backdrop-filter:blur(10px);
-    transition:.3s;
+
+    transition:.35s ease;
 }
 
 .hero-arrow:hover{
     background:#0ea5e9;
+    transform:translateY(-50%) scale(1.05);
 }
 
 .hero-arrow.left{
@@ -129,28 +189,48 @@
 ========================================================= */
 
 .about-section{
-    background:#fff;
-    border-radius:26px;
+    background:#ffffff;
+
+    border-radius:28px;
+
     box-shadow:0 15px 50px rgba(0,0,0,0.08);
+
+    padding:60px !important;
 }
 
 .about-section h2{
-    font-size:44px;
+    font-size:46px;
+
     font-weight:700;
-    margin-bottom:45px;
+
+    margin-bottom:50px;
+
+    text-align:center;
+
     color:#0f172a;
 }
 
 .about-img{
     height:460px;
+
     width:100%;
+
     object-fit:cover;
-    border-radius:22px;
+
+    border-radius:24px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.about-text{
+    padding-left:20px;
 }
 
 .about-text p{
     font-size:17px;
+
     line-height:2;
+
     color:#475569;
 }
 
@@ -159,26 +239,38 @@
 ========================================================= */
 
 .services-section{
-    padding:100px 20px;
+    padding:110px 20px;
+
     background:#f8fafc;
+
     overflow:hidden;
 }
 
 .services-section h2{
     text-align:center;
-    font-size:44px;
+
+    font-size:46px;
+
     font-weight:700;
+
     color:#0f172a;
 }
 
 .services-subtitle{
     max-width:850px;
-    margin:18px auto 65px;
+
+    margin:20px auto 70px;
+
     text-align:center;
+
     color:#64748b;
+
     font-size:17px;
-    line-height:1.8;
+
+    line-height:1.9;
 }
+
+/* SLIDER */
 
 .services-slider-wrapper{
     position:relative;
@@ -205,14 +297,14 @@
     align-items:flex-start;
 }
 
- 
+/* CARD */
 
 .service-card-premium{
     width:31%;
 
     background:#fff;
 
-    border-radius:24px;
+    border-radius:26px;
 
     overflow:hidden;
 
@@ -224,12 +316,18 @@
 }
 
 .service-card-premium:hover{
-    transform:translateY(-10px);
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,0.12);
 }
+
+/* IMAGE */
 
 .service-image{
     position:relative;
-    height:240px;
+
+    height:250px;
+
     overflow:hidden;
 }
 
@@ -237,43 +335,62 @@
     width:100%;
     height:100%;
     object-fit:cover;
-    transition:.5s ease;
+
+    transition:.6s ease;
 }
 
 .service-card-premium:hover img{
     transform:scale(1.08);
 }
 
+/* OVERLAY */
+
 .service-overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(
+
+    background:
+    linear-gradient(
         to top,
-        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.75),
         rgba(0,0,0,0.2)
     );
 
     display:flex;
     align-items:flex-end;
-    padding:22px;
+
+    padding:24px;
 }
 
 .service-overlay h4{
     color:#fff;
+
     font-size:22px;
+
     font-weight:600;
+
     line-height:1.4;
+
+    margin-bottom:0;
 }
 
+/* CONTENT */
+
 .service-content{
-    padding:24px;
+    padding:28px;
 }
 
 .service-content p{
     color:#64748b;
-    line-height:1.8;
+
+    line-height:1.9;
+
     font-size:15px;
+
+    margin-bottom:0;
 }
+
+/* ARROWS */
 
 .slider-arrow{
     position:absolute;
@@ -281,10 +398,11 @@
     transform:translateY(-50%);
     z-index:5;
 
-    width:52px;
-    height:52px;
+    width:54px;
+    height:54px;
 
     border-radius:50%;
+
     background:#0ea5e9;
 
     display:flex;
@@ -292,10 +410,14 @@
     justify-content:center;
 
     color:#fff;
+
     font-size:22px;
+
     cursor:pointer;
 
-    transition:.3s;
+    box-shadow:0 10px 25px rgba(14,165,233,0.3);
+
+    transition:.35s ease;
 }
 
 .slider-arrow:hover{
@@ -315,77 +437,96 @@
 ========================================================= */
 
 .why-section{
-    padding:100px 20px;
-    background:#fff;
+    padding:110px 20px;
+
+    background:#ffffff;
 }
 
 .why-title{
-    font-size:44px;
+    font-size:46px;
+
     font-weight:700;
+
     color:#0f172a;
 }
 
 .why-subtitle{
-    max-width:700px;
-    margin:18px auto 60px;
+    max-width:720px;
+
+    margin:20px auto 65px;
+
     color:#64748b;
-    line-height:1.8;
+
+    line-height:1.9;
 }
 
 .why-card{
     background:#f8fafc;
-    border-radius:24px;
-    padding:50px 25px;
+
+    border-radius:26px;
+
+    padding:55px 25px;
+
     height:100%;
 
     box-shadow:0 10px 30px rgba(0,0,0,0.06);
-    transition:.4s;
+
+    transition:.4s ease;
 }
 
 .why-card:hover{
     transform:translateY(-10px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,0.1);
 }
 
 .why-number{
-    font-size:54px;
+    font-size:58px;
+
     font-weight:700;
+
     color:#0ea5e9;
-    margin-bottom:10px;
+
+    margin-bottom:14px;
 }
 
 .why-text{
     font-size:20px;
+
     font-weight:500;
+
     color:#334155;
 }
 
 /* =========================================================
    CERTIFICATIONS SECTION
 ========================================================= */
- 
-
-/* =========================================================
-   CERTIFICATIONS SECTION
-========================================================= */
 
 .cert-section{
-    padding:100px 20px;
+    padding:110px 20px;
+
     background:#f8fafc;
+
     overflow:hidden;
-    position:relative;
 }
 
 .cert-title{
-    font-size:44px;
+    font-size:46px;
+
     font-weight:700;
+
     color:#0f172a;
 }
 
 .cert-subtitle{
-    margin-top:18px;
+    margin-top:20px;
+
     color:#64748b;
-    line-height:1.8;
-    max-width:750px;
+
+    line-height:1.9;
+
+    max-width:760px;
+
     margin-left:auto;
     margin-right:auto;
 }
@@ -394,18 +535,27 @@
 
 .cert-slider-wrapper{
     position:relative;
+
     overflow:hidden;
-    margin-top:60px;
+
+    margin-top:65px;
+
     width:100%;
+
+    padding:0 10px;
 }
 
 /* SLIDER */
 
 .cert-slider{
     display:flex;
+
     gap:25px;
-    transition:transform 0.8s cubic-bezier(0.65,0,0.35,1);
+
+    transition:transform .8s cubic-bezier(0.65,0,0.35,1);
+
     will-change:transform;
+
     align-items:stretch;
 }
 
@@ -416,24 +566,28 @@
 
     background:#ffffff;
 
-    border-radius:24px;
+    border-radius:26px;
 
-    padding:35px 28px;
+    padding:38px 30px;
 
     min-height:320px;
 
     display:flex;
+
     flex-direction:column;
+
     justify-content:flex-start;
+
     align-items:flex-start;
 
     box-shadow:0 10px 30px rgba(0,0,0,0.08);
 
-    transition:all .35s ease;
+    transition:.35s ease;
 }
 
 .cert-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px);
+
     box-shadow:0 18px 40px rgba(0,0,0,0.12);
 }
 
@@ -441,7 +595,9 @@
 
 .cert-icon{
     font-size:52px;
-    margin-bottom:20px;
+
+    margin-bottom:22px;
+
     line-height:1;
 }
 
@@ -449,19 +605,27 @@
 
 .cert-card h5{
     font-size:22px;
+
     font-weight:700;
+
     color:#0f172a;
-    margin-bottom:14px;
+
+    margin-bottom:16px;
+
     line-height:1.4;
 }
 
-/* DESCRIPTION */
+/* TEXT */
 
 .cert-card p{
     color:#64748b;
-    line-height:1.8;
+
+    line-height:1.9;
+
     font-size:15px;
-    margin-bottom:20px;
+
+    margin-bottom:22px;
+
     flex-grow:1;
 }
 
@@ -469,7 +633,9 @@
 
 .cert-btn{
     display:inline-flex;
+
     align-items:center;
+
     justify-content:center;
 
     padding:12px 22px;
@@ -477,17 +643,21 @@
     border-radius:12px;
 
     background:#0ea5e9;
+
     color:#fff;
 
     font-size:14px;
+
     font-weight:600;
 
-    transition:.3s ease;
+    transition:.35s ease;
 }
 
 .cert-btn:hover{
     background:#0284c7;
+
     color:#fff;
+
     transform:translateY(-2px);
 }
 
@@ -500,8 +670,11 @@
 
 .slider-btn{
     position:absolute;
+
     top:50%;
+
     transform:translateY(-50%);
+
     z-index:20;
 
     width:52px;
@@ -510,6 +683,7 @@
     border-radius:50%;
 
     background:#0ea5e9;
+
     color:#fff;
 
     display:flex;
@@ -522,7 +696,7 @@
 
     box-shadow:0 10px 25px rgba(0,0,0,0.15);
 
-    transition:.3s ease;
+    transition:.35s ease;
 }
 
 .slider-btn:hover{
@@ -530,44 +704,61 @@
 }
 
 .slider-btn.left{
-    left: 10px;;
+    left:10px;
 }
 
 .slider-btn.right{
-    right: 10px;;
-}
-
-.cert-slider-wrapper{
-    padding:0 10px;
+    right:10px;
 }
 
 /* =========================================================
    PRODUCTS SECTION
 ========================================================= */
 
+.products-section{
+    padding-top:40px;
+    padding-bottom:40px;
+}
+
 .products-section h2{
-    font-size:44px;
+    font-size:46px;
+
     font-weight:700;
-    margin-bottom:55px;
+
+    margin-bottom:60px;
+
+    text-align:center;
+
     color:#0f172a;
 }
 
 .product-card{
     border:none;
-    border-radius:24px;
+
+    border-radius:26px;
+
     overflow:hidden;
+
     box-shadow:0 12px 35px rgba(0,0,0,0.08);
-    transition:.4s;
+
+    transition:.4s ease;
+
     height:100%;
 }
 
 .product-card:hover{
     transform:translateY(-10px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,0.12);
 }
+
+/* IMAGE */
 
 .product-img{
     position:relative;
+
     height:280px;
+
     overflow:hidden;
 }
 
@@ -575,16 +766,20 @@
     width:100%;
     height:100%;
     object-fit:cover;
-    transition:.5s;
+
+    transition:.6s ease;
 }
 
 .product-card:hover img{
     transform:scale(1.08);
 }
 
+/* OVERLAY */
+
 .product-overlay{
     position:absolute;
     inset:0;
+
     background:rgba(0,0,0,0.45);
 
     display:flex;
@@ -592,7 +787,8 @@
     justify-content:center;
 
     opacity:0;
-    transition:.4s;
+
+    transition:.4s ease;
 }
 
 .product-card:hover .product-overlay{
@@ -601,25 +797,45 @@
 
 .view-btn{
     background:#0ea5e9;
+
     color:#fff;
+
     padding:12px 24px;
+
     border-radius:12px;
+
     font-weight:500;
+
+    transition:.35s ease;
 }
 
+.view-btn:hover{
+    background:#0284c7;
+    color:#fff;
+}
+
+/* CONTENT */
+
 .card-body{
-    padding:24px;
+    padding:28px;
 }
 
 .card-body h5{
     font-size:22px;
+
     font-weight:600;
-    margin-bottom:12px;
+
+    margin-bottom:14px;
+
+    color:#0f172a;
 }
 
 .card-body p{
     color:#64748b;
-    line-height:1.8;
+
+    line-height:1.9;
+
+    margin-bottom:0;
 }
 
 /* =========================================================
@@ -638,43 +854,32 @@
     }
 
     .hero-content h1{
-        font-size:48px;
+        font-size:52px;
     }
 
     .about-section{
-        padding:30px !important;
+        padding:35px !important;
     }
 
     .about-img{
-        height:340px;
+        height:350px;
         margin-bottom:30px;
     }
 
-.services-slide{
-    justify-content:center;
-}
-
-.service-card-premium{
-    width:47%;
-}
-
-    .cert-section{
-        padding:80px 18px;
+    .about-text{
+        padding-left:0;
     }
 
-    .cert-title{
-        font-size:36px;
+    .services-slide{
+        justify-content:center;
+    }
+
+    .service-card-premium{
+        width:47%;
     }
 
     .cert-card{
         flex:0 0 calc(50% - 13px);
-        min-height:300px;
-    }
-
-    .slider-btn{
-        width:46px;
-        height:46px;
-        font-size:20px;
     }
 }
 
@@ -696,7 +901,7 @@
     }
 
     .hero-content h1{
-        font-size:34px;
+        font-size:38px;
     }
 
     .hero-content p{
@@ -719,7 +924,7 @@
     }
 
     .about-section{
-        padding:24px !important;
+        padding:25px !important;
     }
 
     .about-section h2,
@@ -727,7 +932,7 @@
     .why-title,
     .cert-title,
     .products-section h2{
-        font-size:32px;
+        font-size:34px;
     }
 
     .about-img{
@@ -736,114 +941,34 @@
 
     .about-text p{
         font-size:15px;
-        line-height:1.9;
     }
 
     .services-section,
     .why-section,
     .cert-section{
-        padding:70px 15px;
+        padding:75px 15px;
     }
 
-.services-slide{
-    flex-direction:column;
-    gap:20px;
-}
+    .services-slide{
+        flex-direction:column;
+        gap:20px;
+    }
 
-.service-card-premium{
-    width:100%;
-}
+    .service-card-premium{
+        width:100%;
+    }
 
     .service-image{
         height:220px;
     }
 
-    .service-overlay h4{
-        font-size:18px;
-    }
-
-    .slider-arrow{
-        width:42px;
-        height:42px;
-        font-size:18px;
-    }
-
-    .slider-arrow.left{
-        left:0;
-    }
-
-    .slider-arrow.right{
-        right:0;
-    }
-
     .why-card{
-        margin-bottom:22px;
-        padding:35px 20px;
-    }
-
-    .why-number{
-        font-size:42px;
-    }
-
-    .why-text{
-        font-size:18px;
-    }
-
-
-
-
-.cert-section{
-        padding:70px 15px;
-    }
-
-    .cert-title{
-        font-size:30px;
-        line-height:1.4;
-    }
-
-    .cert-subtitle{
-        font-size:15px;
-    }
-
-    .cert-slider{
-        gap:18px;
+        margin-bottom:24px;
     }
 
     .cert-card{
         flex:0 0 100%;
-        min-height:auto;
-        padding:28px 22px;
-        border-radius:20px;
     }
-
-    .cert-icon{
-        font-size:42px;
-    }
-
-    .cert-card h5{
-        font-size:20px;
-    }
-
-    .cert-card p{
-        font-size:14px;
-    }
-
-    .slider-btn{
-        width:42px;
-        height:42px;
-        font-size:18px;
-    }
-
-    .slider-btn.left{
-        left:10px;
-    }
-
-    .slider-btn.right{
-        right:10px;
-    }
-
-
-
 
     .product-img{
         height:220px;
@@ -871,7 +996,7 @@
     }
 
     .hero-content h1{
-        font-size:26px;
+        font-size:28px;
     }
 
     .hero-content p{
@@ -883,7 +1008,7 @@
     .why-title,
     .cert-title,
     .products-section h2{
-        font-size:26px;
+        font-size:28px;
     }
 
     .about-img{
@@ -891,7 +1016,7 @@
     }
 
     .service-content{
-        padding:18px;
+        padding:20px;
     }
 
     .service-content p{
@@ -899,19 +1024,15 @@
     }
 
     .why-number{
-        font-size:38px;
+        font-size:40px;
     }
 
     .why-text{
         font-size:16px;
     }
 
-.cert-title{
-        font-size:26px;
-    }
-
     .cert-card{
-        padding:24px 18px;
+        padding:25px 20px;
     }
 
     .cert-card h5{
@@ -923,6 +1044,6 @@
     }
 
     .card-body{
-        padding:18px;
+        padding:20px;
     }
 }

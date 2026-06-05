@@ -1,0 +1,110 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/category.css' %}">
+{% endblock %}
+
+{% block title %}
+{{ service.name }} | G.A Enterprises & Services
+{% endblock %}
+
+{% block meta_description %}
+{{ service.seo_description|default:"Professional Engineering Services" }}
+{% endblock %}
+
+
+{% block content %}
+
+<section class="category-detail-page">
+
+    <div class="container">
+
+        <!-- TITLE -->
+        <div class="text-center mb-5">
+            <h1 class="category-title">
+                {{ service.name }}
+            </h1>
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="category-card mb-5">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <h2>Overview</h2>
+
+                    {{ service.overview|safe }}
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    {% if service.gallery_image1 %}
+                    <img src="{{ service.gallery_image1.url }}"
+                         class="img-fluid rounded shadow"
+                         alt="{{ service.name }}">
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SPECIFICATIONS -->
+        <div class="category-card mb-5">
+
+            <h2>Specifications</h2>
+
+            {{ service.specifications|safe }}
+
+        </div>
+
+
+        <!-- APPLICATIONS -->
+        <div class="category-card mb-5">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <h2>Applications</h2>
+
+                    {{ service.applications|safe }}
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    {% if service.gallery_image2 %}
+                    <img src="{{ service.gallery_image2.url }}"
+                         class="img-fluid rounded shadow"
+                         alt="{{ service.name }}">
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BENEFITS -->
+        <div class="category-card">
+
+            <h2>Benefits</h2>
+
+            {{ service.benefits|safe }}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

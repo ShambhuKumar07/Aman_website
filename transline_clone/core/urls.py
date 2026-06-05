@@ -17,4 +17,25 @@ path(
     category_detail,
     name='category_detail'
 ),
+
+path(
+    'services/<slug:slug>/',
+    service_detail,
+    name='service_detail'
+),
+
+
+    path(
+        'services/electrical-services/progressive-die-tooling/',
+        progressive_die_tooling,
+        name='progressive_die_tooling'
+    ),
+
+path(
+    'services/electrical-services/prototyping-services/',
+    prototyping_services,
+    name='prototyping_services'
+),
+
+
 ]

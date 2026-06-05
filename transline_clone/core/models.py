@@ -12,10 +12,42 @@ class Banner(models.Model):
         return self.title
 
 
+# class Service(models.Model):
+#     title = models.CharField(max_length=200)
+#     description = models.TextField()
+#     icon = models.ImageField(upload_to='services/')
+
+#     def __str__(self):
+#         return self.title
+
+
+
+from django.utils.text import slugify
+from django.utils.text import slugify
+
 class Service(models.Model):
     title = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True, blank=True)
+    # slug = models.SlugField(blank=True,null=True)
+
     description = models.TextField()
     icon = models.ImageField(upload_to='services/')
+
+    def save(self, *args, **kwargs):
+
+        if not self.slug:
+
+            base_slug = slugify(self.title)
+            slug = base_slug
+            counter = 1
+
+            while Service.objects.filter(slug=slug).exists():
+                slug = f"{base_slug}-{counter}"
+                counter += 1
+
+            self.slug = slug
+
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title
@@ -202,10 +234,24 @@ class TeamMember(models.Model):
 
 
 # LOCATIONS
+# class AboutLocation(models.Model):
+#     city = models.CharField(max_length=100)
+#     office_type = models.CharField(max_length=100)
+#     map_image = models.ImageField(upload_to='locations/', blank=True, null=True)  # 👈 NEW
+
+#     def __str__(self):
+#         return self.city
+
+
 class AboutLocation(models.Model):
     city = models.CharField(max_length=100)
     office_type = models.CharField(max_length=100)
-    map_image = models.ImageField(upload_to='locations/', blank=True, null=True)  # 👈 NEW
+
+    map_embed_code = models.TextField(
+        blank=True,
+        null=True,
+        help_text="Paste complete Google Maps iframe code"
+    )
 
     def __str__(self):
         return self.city
@@ -275,6 +321,154 @@ class ProductCategory(MPTTModel):
         upload_to='category_gallery/',
         blank=True,
         null=True
+    )
+
+    class MPTTMeta:
+        order_insertion_by = ['name']
+
+    def save(self, *args, **kwargs):
+
+        if not self.slug:
+            self.slug = slugify(self.name)
+
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
+    
+
+
+
+#######################
+# navbar Services
+#######################
+
+
+# class ServiceCategory(MPTTModel):
+
+#     name = models.CharField(max_length=100)
+
+#     slug = models.SlugField(
+#         unique=True,
+#         blank=True
+#     )
+
+#     icon = models.CharField(
+#         max_length=20,
+#         blank=True,
+#         null=True
+#     )
+
+#     parent = TreeForeignKey(
+#         'self',
+#         on_delete=models.CASCADE,
+#         null=True,
+#         blank=True,
+#         related_name='children'
+#     )
+
+#     # NEW FIELDS
+
+#     overview = models.TextField(
+#         blank=True,
+#         null=True
+#     )
+
+#     specifications = models.TextField(
+#         blank=True,
+#         null=True
+#     )
+
+#     gallery_image1 = models.ImageField(
+#         upload_to='service_gallery/',
+#         blank=True,
+#         null=True
+#     )
+
+#     gallery_image2 = models.ImageField(
+#         upload_to='service_gallery/',
+#         blank=True,
+#         null=True
+#     )
+
+#     class MPTTMeta:
+#         order_insertion_by = ['name']
+
+#     def save(self, *args, **kwargs):
+
+#         if not self.slug:
+#             self.slug = slugify(self.name)
+
+#         super().save(*args, **kwargs)
+
+#     def __str__(self):
+#         return self.name
+
+
+from tinymce.models import HTMLField
+
+class ServiceCategory(MPTTModel):
+
+    name = models.CharField(max_length=100)
+
+    slug = models.SlugField(
+        unique=True,
+        blank=True
+    )
+
+    icon = models.CharField(
+        max_length=20,
+        blank=True,
+        null=True
+    )
+
+    parent = TreeForeignKey(
+        'self',
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name='children'
+    )
+
+    # CONTENT
+
+    overview = HTMLField(
+        blank=True,
+        null=True
+    )
+
+    specifications = HTMLField(
+        blank=True,
+        null=True
+    )
+
+    applications = HTMLField(
+        blank=True,
+        null=True
+    )
+
+    benefits = HTMLField(
+        blank=True,
+        null=True
+    )
+
+    # IMAGES
+
+    gallery_image1 = models.ImageField(
+        upload_to='service_gallery/',
+        blank=True,
+        null=True
+    )
+
+    gallery_image2 = models.ImageField(
+        upload_to='service_gallery/',
+        blank=True,
+        null=True
+    )
+
+    seo_description = models.TextField(
+    blank=True,
+    null=True
     )
 
     class MPTTMeta:
