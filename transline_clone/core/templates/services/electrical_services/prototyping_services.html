@@ -2,13 +2,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}
-Prototyping Services | G A Enterprises
-{% endblock %}
-
-{% block meta_description %}
-Prototyping Services
-{% endblock %}
+{% block title %}Tool & Die Design Engineering Services{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/prototyping.css' %}">
@@ -16,257 +10,209 @@ Prototyping Services
 
 {% block content %}
 
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="overlay">
+        <div class="hero-content">
+            <h1>Tool & Die Design Engineering Services</h1>
+            <p>
+                Precision Engineering • Progressive Tooling • Product Development
+            </p>
 
-<div class="container">
-    <h1>Prototyping Services</h1>
-
-    <p>
-        Before a product reaches full-scale manufacturing, it is essential to develop a prototype
-        to evaluate its design, performance, and functionality. At G A Enterprises, we deliver
-        high-quality prototyping solutions that help transform ideas into real, manufacturable
-        components with speed, accuracy, and reliability.
-    </p>
- 
-
-    <p>
-        Our prototyping process allows customers to test, refine, and improve product designs
-        before mass production begins. Making changes during the prototype stage is faster,
-        easier, and significantly more cost-effective than modifying products after production starts.
-    </p>
+            <a href="/contact/" class="btn-primary">
+                Request Consultation
+            </a>
+        </div>
+    </div>
 </section>
 
-<div class="container">
+<!-- ABOUT -->
+<section class="section">
+    <div class="container split-layout">
 
-    <section class="section">
-        <h2>Precision Prototyping & Engineering Expertise</h2>
+        <div class="content">
+            <h2>Engineering Excellence Through Precision & Innovation</h2>
 
-        <p>
-            G A Enterprises specializes in metal stamping prototypes, precision forming,
-            CNC machining, and quick-turn development solutions. We support both
-            progressive die manufacturing for high-volume production and single-stage
-            prototype development for initial design validation.
-        </p>
+            <p>
+                Our team focuses on delivering innovative, practical, and
+                cost-effective tooling solutions that improve production efficiency,
+                dimensional accuracy, and product quality.
+            </p>
 
-        <p>
-            Our objective is to help customers move efficiently from concept to production
-            while minimizing risk and ensuring complete confidence in the final design.
-        </p>
-    </section>
+            <p>
+                Every project is engineered with a focus on reliability,
+                manufacturability, productivity improvement, and long-term cost savings.
+            </p>
+        </div>
 
-    <section class="section">
-        <h2>Rapid Prototyping Services</h2>
+        <div class="image-box">
+            <img src="{% static 'images/cad-design.jpg' %}" alt="">
+        </div>
 
-        <p>
-            We provide fast and reliable prototype development solutions for OEMs,
-            product developers, and industrial manufacturers.
-        </p>
+    </div>
+</section>
 
-        <div class="cards">
+<!-- SERVICES -->
+<section class="services-section">
+    <div class="container">
 
-            <div class="card">
-                <h3>Metal Stamped Prototypes</h3>
-                <p>Precision prototype components for design validation and testing.</p>
+        <h2 class="section-title">
+            Advanced Design & Manufacturing Solutions
+        </h2>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <h3>Progressive Die Design</h3>
+                <p>High-volume production tooling solutions.</p>
             </div>
 
-            <div class="card">
-                <h3>Short-Run Production</h3>
-                <p>Low-volume manufacturing for testing, evaluation, and pilot production.</p>
+            <div class="service-card">
+                <h3>Compound Die Design</h3>
+                <p>Multiple cutting operations in one stroke.</p>
             </div>
 
-            <div class="card">
-                <h3>Insert & Over Molding</h3>
-                <p>Prototype assemblies combining metal and plastic components.</p>
+            <div class="service-card">
+                <h3>Blanking & Piercing Dies</h3>
+                <p>Precision tooling for accurate operations.</p>
             </div>
 
-            <div class="card">
-                <h3>CNC Machining</h3>
-                <p>High-precision machined prototype components with tight tolerances.</p>
+            <div class="service-card">
+                <h3>Forming & Bending Dies</h3>
+                <p>Custom dies for complex manufacturing.</p>
             </div>
 
-            <div class="card">
-                <h3>Functional Product Samples</h3>
-                <p>Working models for performance validation and customer approvals.</p>
+            <div class="service-card">
+                <h3>Jigs & Fixtures</h3>
+                <p>Repeatability, efficiency and accuracy.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>Inspection Gauges</h3>
+                <p>Dimensional inspection & quality assurance.</p>
             </div>
 
         </div>
-    </section>
 
-    <section class="section">
-        <h2>Why Choose Our Prototyping Solutions</h2>
+    </div>
+</section>
 
-        <div class="cards">
+<!-- TOOLROOM -->
+<section class="section dark-section">
 
-            <div class="card">
-                <h3>Engineering Support</h3>
-                <p>
-                    Our engineering team helps improve manufacturability, optimize designs,
-                    and enhance product performance.
-                </p>
-            </div>
+    <div class="container split-layout">
 
-            <div class="card">
-                <h3>Fast Turnaround</h3>
-                <p>
-                    Rapid development cycles help reduce time-to-market and accelerate product launches.
-                </p>
-            </div>
+        <div class="image-box">
+            <img src="{% static 'images/toolroom.jpg' %}" alt="">
+        </div>
 
-            <div class="card">
-                <h3>Quality Assurance</h3>
-                <p>
-                    Every prototype undergoes detailed inspection and precision dimensional verification.
-                </p>
-            </div>
+        <div class="content">
 
-            <div class="card">
-                <h3>Advanced Equipment</h3>
-                <p>
-                    Modern CNC machines, presses, lathes, grinders, and molding systems
-                    ensure accurate prototype manufacturing.
-                </p>
-            </div>
+            <h2>In-House Toolroom</h2>
+
+            <p>
+                Our fully equipped toolroom is managed by highly skilled engineers,
+                toolmakers and technicians.
+            </p>
+
+            <p>
+                Continuous investment in technology enables us to provide
+                precision tooling with dependable quality.
+            </p>
 
         </div>
-    </section>
 
-    <section class="section">
-        <h2>Our Prototyping Capabilities</h2>
+    </div>
 
-        <div class="cards">
+</section>
 
-            <div class="card">CNC Machining & Milling</div>
-            <div class="card">Precision Metal Stamping</div>
-            <div class="card">Progressive Tool Development</div>
-            <div class="card">Plastic Injection Prototype Parts</div>
-            <div class="card">Assembly & Sub-Assembly Support</div>
-            <div class="card">Design Validation Models</div>
-            <div class="card">Reverse Engineering Support</div>
+<!-- CAPABILITIES -->
+<section class="section">
+    <div class="container">
 
-        </div>
-    </section>
+        <h2 class="section-title">
+            Engineering Capabilities
+        </h2>
 
-    <section class="section">
-        <h2>Industries We Serve</h2>
+        <div class="capability-grid">
 
-        <div class="cards">
-
-            
-
-            <div class="card">
-                <h3>Medical</h3>
-                <p>
-                    Prototypes for surgical instruments, healthcare equipment,
-                    and precision medical devices.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Automotive</h3>
-                <p>
-                    Development of engine parts, chassis components,
-                    and functional automotive assemblies.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Consumer & Commercial Products</h3>
-                <p>
-                    Product development solutions for electronics,
-                    appliances, and consumer goods.
-                </p>
-            </div>
+            <div>CAD Design & Drafting</div>
+            <div>Tool & Die Design</div>
+            <div>Progressive Tool Development</div>
+            <div>Material Selection</div>
+            <div>Prototype Development</div>
+            <div>Reverse Engineering</div>
+            <div>Product Optimization</div>
+            <div>Manufacturing Planning</div>
 
         </div>
-    </section>
 
-    <section class="section">
-        <h2>Our Commitment to Quality</h2>
+    </div>
+</section>
 
-        <p>
-            As a quality-driven engineering company, G A Enterprises follows
-            strict manufacturing and inspection procedures to ensure dependable results.
-            Our continuous improvement approach allows us to deliver prototypes that meet
-            global industry expectations for accuracy, reliability, and performance.
-        </p>
+<!-- REVERSE ENGINEERING -->
+<section class="section">
+    <div class="container split-layout">
 
-        <p>
-            We are committed to providing efficient, accurate, and cost-effective
-            prototyping solutions for every project.
-        </p>
-    </section>
+        <div class="content">
 
-    <section class="section">
-        <h2>Our Services</h2>
+            <h2>Reverse Engineering Services</h2>
 
-        <ul>
-            <li>Tool & Die Design Engineering</li>
-            <li>Precision Tooling Solutions</li>
-            <li>Metal Stamping</li>
-            <li>Assembly & Sub-Assembly</li>
-            <li>Plating Services</li>
-            <li>Plastic Injection Molding</li>
-            <li>Insert & Over Molding</li>
-            <li>Rapid Prototyping</li>
-        </ul>
-    </section>
-
-    <section class="section">
-        <h2>Why G A Enterprises</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>Strategic Location</h3>
-                <p>
-                    Located in India's leading industrial hub with easy access
-                    to suppliers, logistics, and manufacturing resources.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Reliability</h3>
-                <p>
-                    Serving customers across Europe, USA, and Asia with
-                    consistent quality and dependable delivery.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Technical Expertise</h3>
-                <p>
-                    Extensive experience in progressive tooling,
-                    die design, prototype development, and precision manufacturing.
-                </p>
-            </div>
+            <p>
+                We recreate components accurately through detailed measurement,
+                modeling and technical documentation.
+            </p>
 
         </div>
-    </section>
 
-    <section class="section">
-        <h2>Industries & Categories</h2>
+        <div class="image-box">
+            <img src="{% static 'images/reverse-engineering.jpg' %}" alt="">
+        </div>
+
+    </div>
+</section>
+
+<!-- SOFTWARE -->
+<section class="section software-section">
+
+    <div class="container">
+
+        <h2>Design Software & Technologies</h2>
+
+        <div class="software-grid">
+
+            <div>AutoCAD</div>
+            <div>SolidWorks</div>
+            <div>UG NX</div>
+            <div>Inventor</div>
+            <div>3D QuickPress</div>
+            <div>CAD/CAM</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+
+    <div class="container">
+
+        <h2>
+            Looking for Custom Tool & Die Design Solutions?
+        </h2>
 
         <p>
-            Aerospace • Automotive • Electronics • Industrial Engineering • Medical Devices •
-            Consumer Products • Metal Stamping • Tooling • Prototype Development •
-            Sheet Metal Engineering
+            Contact our engineering experts today.
         </p>
-    </section>
 
-    <section class="section">
-        <h2>Conclusion</h2>
+        <a href="/contact/" class="btn-primary">
+            Get a Quote
+        </a>
 
-        <p>
-            G A Enterprises delivers reliable prototyping solutions that help transform ideas
-            into production-ready products with speed, precision, and engineering excellence.
-            From concept development and design validation to tooling and manufacturing support,
-            we help customers confidently move toward successful production.
-        </p>
-    </section>
+    </div>
 
-</div>
+</section>
 
 {% endblock %}
-
-
- 
- 

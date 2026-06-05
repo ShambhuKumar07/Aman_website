@@ -32,10 +32,9 @@ path(
     ),
 
 path(
-    'services/electrical-services/prototyping-services/',
+    'services/electrical-services/Tool-and-Die-Design-Engineering/',
     prototyping_services,
     name='prototyping_services'
 ),
-
 
 ]
