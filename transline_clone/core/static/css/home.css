@@ -195,7 +195,8 @@ p{
 
     box-shadow:0 15px 50px rgba(0,0,0,0.08);
 
-    padding:60px !important;
+    /* padding:60px !important; */
+    padding:10px !important;
 }
 
 .about-section h2{
@@ -239,7 +240,8 @@ p{
 ========================================================= */
 
 .services-section{
-    padding:110px 20px;
+    /* padding:110px 20px; */
+    padding:10px 20px;
 
     background:#f8fafc;
 
@@ -437,7 +439,8 @@ p{
 ========================================================= */
 
 .why-section{
-    padding:110px 20px;
+    /* padding:110px 20px; */
+    padding:10px 20px;
 
     background:#ffffff;
 }
@@ -503,7 +506,8 @@ p{
 ========================================================= */
 
 .cert-section{
-    padding:110px 20px;
+    /* padding:110px 20px; */
+    padding:30px 20px;
 
     background:#f8fafc;
 
@@ -716,16 +720,19 @@ p{
 ========================================================= */
 
 .products-section{
-    padding-top:40px;
-    padding-bottom:40px;
+    /* padding-top:40px; */
+    padding-top:10px;
+    /* padding-bottom:40px; */
+    padding-bottom:10px;
 }
 
 .products-section h2{
     font-size:46px;
 
     font-weight:700;
-
-    margin-bottom:60px;
+    margin-top: -56px;
+    /* margin-bottom:60px; */
+    margin-bottom:15px;
 
     text-align:center;
 

@@ -1,3 +1,4 @@
+
 /* ==========================================
    GLOBAL STYLES
 ========================================== */
@@ -28,8 +29,7 @@ body{
 }
 
 .section{
-    /* margin-bottom:100px; */
-    margin-bottom:10px;
+    margin-bottom:100px;
 }
 
 h2{
@@ -63,6 +63,57 @@ p{
 /* ==========================================
    HERO SECTION
 ========================================== */
+
+
+
+
+.hero-content{
+    max-width:900px;
+    margin:auto;
+}
+
+.hero-short{
+    max-width:750px;
+    margin:auto;
+}
+
+.hero-more{
+    margin-top:20px;
+    text-align:left;
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.hero-more summary{
+    display:inline-block;
+    background:#fff;
+    color:#0f3d6e;
+    padding:12px 25px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+    list-style:none;
+}
+
+.hero-more summary::-webkit-details-marker{
+    display:none;
+}
+
+.hero-more[open]{
+    background:rgba(255,255,255,.12);
+    padding:20px;
+    border-radius:15px;
+    margin-top:25px;
+}
+
+.hero-more p{
+    color:#fff;
+    margin-top:15px;
+}
+
+
+
 
 .hero{
     position:relative;
@@ -98,6 +149,44 @@ p{
     font-size:20px;
     opacity:.95;
 }
+
+
+
+
+
+/* READ MORE */
+
+.read-more{
+    margin-top:15px;
+}
+
+.read-more summary{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+    color:#1e88e5;
+    font-weight:600;
+    list-style:none;
+}
+
+.read-more summary::-webkit-details-marker{
+    display:none;
+}
+
+.read-more summary::after{
+    content:"+";
+    font-size:18px;
+}
+
+.read-more[open] summary::after{
+    content:"−";
+}
+
+.read-more p{
+    margin-top:15px;
+}
+
 
 /* ==========================================
    CONTENT SECTION
@@ -401,6 +490,202 @@ li{
 
     p{
         font-size:15px;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE FIXES
+========================================== */
+
+/* Large Tablets */
+@media screen and (max-width:1024px){
+
+    .container{
+        width:95%;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    h2{
+        font-size:34px;
+    }
+
+}
+
+/* Tablets */
+@media screen and (max-width:768px){
+
+    body{
+        line-height:1.7;
+    }
+
+    .container{
+        width:95%;
+        padding:40px 15px;
+    }
+
+    .hero{
+        min-height:500px;
+        padding:80px 20px;
+    }
+
+    .hero h1{
+        font-size:38px;
+        line-height:1.2;
+    }
+
+    .hero p{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+    .section{
+        padding:25px;
+        margin-bottom:40px;
+        border-radius:18px;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+    h3{
+        font-size:20px;
+    }
+
+    p,
+    li{
+        font-size:15px;
+    }
+
+    .card{
+        padding:22px;
+    }
+
+    .capabilities,
+    .benefits,
+    .advantages{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .faq-item{
+        padding:20px;
+    }
+
+    .cta-section{
+        padding:50px 25px;
+    }
+
+    .cta-btn{
+        width:100%;
+        max-width:300px;
+        text-align:center;
+    }
+
+}
+
+/* Mobile Phones */
+@media screen and (max-width:480px){
+
+    .container{
+        width:100%;
+        padding:30px 12px;
+    }
+
+    .hero{
+        min-height:420px;
+        padding:60px 15px;
+    }
+
+    .hero h1{
+        font-size:30px;
+        line-height:1.2;
+    }
+
+    .hero p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .section{
+        padding:20px;
+        border-radius:15px;
+    }
+
+    h2{
+        font-size:24px;
+        margin-bottom:18px;
+    }
+
+    h2::after{
+        width:60px;
+        height:3px;
+    }
+
+    h3{
+        font-size:18px;
+    }
+
+    p,
+    li{
+        font-size:14px;
+    }
+
+    .card{
+        padding:18px;
+        border-radius:15px;
+    }
+
+    .card h3{
+        font-size:18px;
+    }
+
+    .faq-item{
+        padding:18px;
+    }
+
+    .cta-section{
+        padding:40px 20px;
+        border-radius:18px;
+    }
+
+    .cta-btn{
+        width:100%;
+        padding:14px 20px;
+    }
+
+}
+
+/* Extra Small Devices */
+@media screen and (max-width:360px){
+
+    .hero h1{
+        font-size:26px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    h2{
+        font-size:22px;
+    }
+
+    .section{
+        padding:16px;
+    }
+
+    .card{
+        padding:15px;
     }
 
 }
