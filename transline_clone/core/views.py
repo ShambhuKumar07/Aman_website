@@ -40,7 +40,7 @@ def home(request):
     }
 
     return render(request, 'home.html', context)
- 
+
 # =========================
 # 📞 CONTACT VIEW
 # =========================
@@ -199,6 +199,9 @@ def progressive_die_tooling(request):
         'services/electrical_services/progressive_die_tooling.html', context
     )
 
+
+
+
 def prototyping_services(request):
 
     navbar_categories = ProductCategory.objects.filter(parent=None)
@@ -220,3 +223,21 @@ def prototyping_services(request):
 #         request,
 #         'services/tool_mould_design/plc_automation.html'
 #     )
+
+
+
+
+def manpower(request):
+
+    # ONLY MAIN CATEGORY
+    navbar_categories = ProductCategory.objects.filter(parent=None)
+    service_categories = ServiceCategory.objects.filter(parent=None)
+
+    context = {
+ 
+        'navbar_categories': navbar_categories,
+        'service_categories': service_categories,
+ 
+    }
+
+    return render(request, 'manpower.html', context)

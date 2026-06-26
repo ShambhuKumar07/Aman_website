@@ -37,4 +37,8 @@ path(
     name='prototyping_services'
 ),
 
+
+path('manpower/', manpower, name='manpower'),
+
+
 ]

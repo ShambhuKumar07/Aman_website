@@ -1,13 +1,30 @@
+{% load static %}
+
+<!-- ===========================================
+        STATIC MANPOWER MENU
+=========================================== -->
+
+<a href="{% url 'manpower' %}" class="mega-item">
+    Manpower Supply
+</a>
+
+<!-- ===========================================
+        DATABASE SERVICES
+=========================================== -->
+
 {% for item in services %}
 
-    <!-- Tool & Mould Design Special Menu -->
+    <!-- Tool Design Engineering -->
     {% if item.name == "Tool Design Engineering" %}
 
         <div class="menu-group">
 
             <div class="menu-title toggle-submenu">
+
                 <span>{{ item.name }}</span>
+
                 <i class="fas fa-chevron-down menu-arrow"></i>
+
             </div>
 
             <div class="submenu">
@@ -19,7 +36,7 @@
 
                 <a href="{% url 'prototyping_services' %}"
                    class="mega-item">
-                    Tool & Die Design Engineering Services
+                    Tool &amp; Die Design Engineering Services
                 </a>
 
             </div>
@@ -50,9 +67,7 @@
 
         <a href="{% url 'service_detail' item.slug %}"
            class="mega-item">
-
             {{ item.name }}
-
         </a>
 
     {% endif %}
